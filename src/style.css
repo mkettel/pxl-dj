@@ -1,0 +1,57 @@
+html,
+body,
+#root
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(24, 24, 24);
+}
+
+/* Fonts
+font-family: 'Bonny', serif;
+font-family: 'Clash Display', sans-serif;
+font-family: 'Ranade', sans-serif;
+font-family: 'Panchang', sans-serif;
+font-family: 'Britney', cursive;
+*/
+
+
+.main-container {
+    display: flex;
+    z-index: 10;
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    color: white;
+}
+.main-container .title {
+    margin: 0px;
+    font-size: 75px;
+    font-family: 'Britney', cursive;
+}
+
+.right-container {
+    position: absolute;
+    top: 25px;
+    right: 50px;
+    color: white;
+    font-family: 'Britney', cursive;
+}
+.right-container .data {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+.right-container .header {
+    font-size: 32px;
+    margin: 0px;
+}
+.right-container .text {
+    font-size: 24px;
+    margin: 0px;
+    margin-bottom: 2px;
+}
