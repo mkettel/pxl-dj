@@ -1,12 +1,16 @@
 import { OrbitControls, Environment, CameraControls } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import { Turntable } from './models/Turntable'
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
+import { useThree } from '@react-three/fiber'
+
 
 export default function Experience()
 {
     const controls = useRef()
     const meshFitCameraHome = useRef()
+    const { size } = useThree()
+    const [position, setPosition] = useState([0, 0, 0])
 
     const intro = async () => {
         controls.current.rotate(0.6, -1, true)
@@ -27,8 +31,13 @@ export default function Experience()
     useEffect(() => {
         window.addEventListener('resize', fitCameraHome)
         return () => window.removeEventListener('resize', fitCameraHome)
-    
     })
+
+    useEffect(() => {
+        // Update the position based on the screen size
+        const isMobile = size.width <= 768;
+        setPosition(isMobile ? [0, 0, 1] : [0, 0, 0]);
+      }, [size]);  
 
 
     return <>
@@ -47,7 +56,9 @@ export default function Experience()
             <boxGeometry args={ [ 7.2, 3, 3 ] } />
             <meshStandardMaterial color="hotpink" transparent opacity={0} />
         </mesh>
-        <Turntable position={ [ 0, 0, 0 ] } scale={1.7} rotation={[-0.4, 0, 0]} />
+
+
+        <Turntable position={position} scale={1.7} rotation={[-0.4, 0, 0]} />
 
     </>
 }
