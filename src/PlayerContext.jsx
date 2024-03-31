@@ -6,8 +6,8 @@ export const PlayerProvider = ({ children }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const togglePlay = () => {
-    setIsPlaying((prevState) => !prevState);
-    console.log('toggled', isPlaying);
+    setIsPlaying((prevState) => !prevState); // this will toggle the state between true and false
+    console.log('playing state context', !isPlaying); // logging the current state
   };
 
   const setPlayingState = (state) => {

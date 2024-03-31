@@ -24,7 +24,7 @@ export function Turntable(props) {
     const spinnyLeft = useRef()
 
     // if isHovered is true then make cursor a pointer
-    console.log(document.body.style);
+    // console.log(document.body.style);
     if (isHovered) {
         document.body.style.cursor = 'pointer'
     } else {
@@ -41,8 +41,8 @@ export function Turntable(props) {
         e.stopPropagation()
         // e.object.material.color.set('#D1B47E')
         setIsHovered(true)
-        console.log(e.object);
-        console.log(`Hovering over ${partName}`)
+        // console.log(e.object);
+        // console.log(`Hovering over ${partName}`)
     }
 
     const turntableHoverEnd = (e, partName) => {
@@ -50,15 +50,15 @@ export function Turntable(props) {
         setIsHovered(false)
         e.object.material.color.set('white')
         const material = e.object.material.color
-        console.log(`No longer hovering over ${partName} ${material}`)
+        // console.log(`No longer hovering over ${partName} ${material}`)
     }
 
   //get all materials
     const allMaterials = Object.values(materials)
     allMaterials.forEach((material) => {
-        console.log(material.name);
+        // console.log(material.name);
         if (material.name === "edge_color123118118255") {
-            console.log('targeted material', material);
+            // console.log('targeted material', material);
             material.color.set('red')
             material.emissive.set('blue')
             material.emissiveIntensity = 2.5

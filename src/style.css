@@ -55,3 +55,12 @@ font-family: 'Britney', cursive;
     margin: 0px;
     margin-bottom: 2px;
 }
+
+.video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: none;
+}

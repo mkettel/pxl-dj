@@ -13,23 +13,24 @@ export default function Overlay() {
 
     const handleStateChange = (event) => {
         if (event.data === YT.PlayerState.PLAYING) {
-        setPlayingState(true);
+          setPlayingState(true);
         } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
-        setPlayingState(false);
+          setPlayingState(false);
         }
-    };
+      };
+
+    const VIDEO_ID = '2e8x3fFZP3Q';
 
     useEffect(() => {
         if (player) {
-            if (isPlaying) {
-                player.playVideo();
-            } else {
-                player.pauseVideo();
-            }
+          if (isPlaying) {
+            player.playVideo();
+          } else {
+            player.pauseVideo();
+          }
         }
-        console.log('state', isPlaying);
-        console.log('player state', player);
-    }, [player, isPlaying]);
+        console.log('playing state overlay', isPlaying);
+      }, [player, isPlaying]);
 
     return (
         <>
@@ -46,22 +47,29 @@ export default function Overlay() {
                     <p className="text">160 W 75th St. Apt, 2B</p>
                 </div>
             </div>
+            <div className="video">
+
             <YouTube
-                videoId="2e8x3fFZP3Q"
+                id='player'
+                videoId="f5IruTV-LGQ"
                 onReady={handlePlayerReady}
                 onStateChange={handleStateChange}
+                onPlay={() => console.log('Playing')}
+                onError={(e) => console.log('Error', e)}
                 opts={{
                     playerVars: {
-                        autoplay: isPlaying ? 1 : 0,
+                        
+                        autoplay: 0,
                         controls: 0,
-                        disablekb: 1,
+                        disablekb: 1, 
                         modestbranding: 1,
-                        rel: 0,
+                        rel: 0, 
                         showinfo: 0,
                     },
                 }}
-                style={{ display: 'none' }}
-            />
+                
+                />
+            </div>
         </>
     );
 }
