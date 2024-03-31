@@ -39,10 +39,7 @@ export function Turntable(props) {
 
     const turntableHover = (e, partName) => {
         e.stopPropagation()
-        // e.object.material.color.set('#D1B47E')
         setIsHovered(true)
-        // console.log(e.object);
-        // console.log(`Hovering over ${partName}`)
     }
 
     const turntableHoverEnd = (e, partName) => {
@@ -692,7 +689,7 @@ export function Turntable(props) {
           onClick={handleButtonClick}
           onPointerOver={playButtonHover}
           onPointerOut={playButtonHoverEnd}
-          position={[0, isButtonPressed ? -0.12 : 0, 0]}
+          position={[0, isButtonPressed ? -0.15 : 0, 0]}
         />
         <mesh
           castShadow

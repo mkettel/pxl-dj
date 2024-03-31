@@ -68,11 +68,11 @@ font-family: 'Britney', cursive;
 @media screen and (max-width: 800px) {
     .main-container {
         top: 10px;
-        left: 10px;
+        left: 20px;
     }
     .right-container {
         top: 130px;
-        left: 10px;
+        left: 20px;
     }
     .main-container .title {
         font-size: 80px;

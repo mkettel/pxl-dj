@@ -11,6 +11,7 @@ export default function Experience()
     const meshFitCameraHome = useRef()
     const { size } = useThree()
     const [position, setPosition] = useState([0, 0, 0])
+    const [maxZoom, setMaxZoom] = useState(3.5)
 
     const intro = async () => {
         controls.current.rotate(0.6, -1, true)
@@ -37,7 +38,8 @@ export default function Experience()
         // Update the position based on the screen size
         const isMobile = size.width <= 768;
         setPosition(isMobile ? [0, 0, 1] : [0, 0, 0]);
-      }, [size]);  
+        setMaxZoom(isMobile ? 13.0 : 3.5);
+      }, [size, setPosition, setMaxZoom]);  
 
 
     return <>
@@ -45,7 +47,7 @@ export default function Experience()
         {/* <Perf position="top-left" /> */}
 
         {/* <OrbitControls makeDefault /> */}
-        <CameraControls ref={controls} />
+        <CameraControls ref={controls} minDistance={3.4} maxDistance={maxZoom} />
 
         <directionalLight castShadow position={ [ 1, 4, 3 ] } intensity={ 4.5 } />
         <ambientLight intensity={ 1 } />
