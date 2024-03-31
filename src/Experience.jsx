@@ -1,9 +1,9 @@
 import { OrbitControls, Environment, CameraControls } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import { Turntable } from './models/Turntable'
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect, useState, Suspense } from 'react'
 import { useThree } from '@react-three/fiber'
-
+import Block from './Block'
 
 export default function Experience()
 {
@@ -58,7 +58,9 @@ export default function Experience()
         </mesh>
 
 
-        <Turntable position={position} scale={1.7} rotation={[-0.4, 0, 0]} />
+        <Suspense fallback={<Block />}>
+            <Turntable position={position} scale={1.7} rotation={[-0.4, 0, 0]} />
+        </Suspense>
 
     </>
 }
