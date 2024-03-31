@@ -1,11 +1,12 @@
+import React, { useState, useEffect } from 'react';
 
-
-export default function Suspense() {
+export default function Suspense({ args, setArgs }) {
+    
 
     return (
         <>
-            <mesh position={[0, 0, 0]}>
-                <boxGeometry args={[15, 2, 5]} />
+            <mesh position={[0, -2, 0]}>
+                <boxGeometry args={args} />
                 <meshStandardMaterial color="hotpink" wireframe />
             </mesh>
         </>

@@ -11,6 +11,7 @@ export default function Experience()
     const meshFitCameraHome = useRef()
     const { size } = useThree()
     const [position, setPosition] = useState([0, 0, 0])
+    const [args, setArgs] = useState([15, 2, 5])
 
     const intro = async () => {
         controls.current.rotate(0.6, -1, true)
@@ -37,6 +38,7 @@ export default function Experience()
         // Update the position based on the screen size
         const isMobile = size.width <= 768;
         setPosition(isMobile ? [0, 0, 1] : [0, 0, 0]);
+        setArgs(isMobile ? [6, 2, 5] : [15, 2, 5]);
       }, [size]);  
 
 
@@ -58,7 +60,7 @@ export default function Experience()
         </mesh>
 
 
-        <Suspense fallback={<Block />}>
+        <Suspense fallback={<Block args={args} setArgs={setArgs}  />}>
             <Turntable position={position} scale={1.7} rotation={[-0.4, 0, 0]} />
         </Suspense>
 
