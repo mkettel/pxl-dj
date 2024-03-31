@@ -82,7 +82,8 @@ font-family: 'Britney', cursive;
         font-size: 34px;
     }
     .right-container .text {
-        font-size: 22px;
+        font-size: 20px;
+        margin-bottom: 5px;
     }
     
 }
