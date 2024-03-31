@@ -76,6 +76,7 @@ font-family: 'Britney', cursive;
     }
     .main-container .title {
         font-size: 80px;
+        width: 300px;
     }
     .right-container .header {
         font-size: 34px;
