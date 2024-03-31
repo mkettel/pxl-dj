@@ -38,7 +38,7 @@ export default function Experience()
         // Update the position based on the screen size
         const isMobile = size.width <= 768;
         setPosition(isMobile ? [0, 0, 1] : [0, 0, 0]);
-        setArgs(isMobile ? [3, 2, 5] : [15, 2, 5]);
+        setArgs(isMobile ? [4, 2, 5] : [15, 2, 5]);
       }, [size]);  
 
 
