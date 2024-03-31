@@ -44,7 +44,7 @@ export default function Experience()
         <Environment preset="apartment"  />
 
         <mesh ref={meshFitCameraHome} position={[0, .5, 0]}>
-            <boxGeometry args={ [ 6.8, 3, 3 ] } />
+            <boxGeometry args={ [ 7.2, 3, 3 ] } />
             <meshStandardMaterial color="hotpink" transparent opacity={0} />
         </mesh>
         <Turntable position={ [ 0, 0, 0 ] } scale={1.7} rotation={[-0.4, 0, 0]} />
