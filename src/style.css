@@ -29,13 +29,13 @@ font-family: 'Britney', cursive;
 }
 .main-container .title {
     margin: 0px;
-    font-size: 75px;
+    font-size: 80px;
     font-family: 'Britney', cursive;
 }
 
 .right-container {
     position: absolute;
-    top: 25px;
+    top: 30px;
     right: 50px;
     color: white;
     font-family: 'Britney', cursive;
