@@ -65,6 +65,72 @@ font-family: 'Britney', cursive;
     display: none;
 }
 
+/* Custom Cursor */
+.custom-cursor {
+    position: fixed;
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    z-index: 9999;
+  }
+
+
+  /* RSVP MODAL */
+  .modal-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0);
+    z-index: 100;
+  }
+  .modal-bucket {
+    min-width: 50vw;
+    min-height: 60vh;
+    max-width: 60vw;
+    border: 1px solid white;
+    border-radius: 10px;
+    backdrop-filter: blur(5px); 
+    background: rgba(0, 0, 0, 0.5);
+    padding: 45px;
+    font-family: 'Panchang', sans-serif;
+  }
+  .modal-bucket .modal-field {
+    display: flex;
+    flex-direction: column;
+  }
+  .modal-bucket .modal-field .marker {
+    padding: 5px;
+    border: 2px solid rgb(150, 64, 250);
+    max-width: fit-content;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    background-color: rgb(26, 26, 26);
+  }
+  .modal-bucket .modal-field .marker p {
+    font-size: 24px;
+    margin: 0px;
+    padding: 2px;
+    color: rgb(255, 99, 99);
+    font-weight: 500;
+  }
+  .modal-bucket .modal-field input {
+    background-color: rgb(43, 43, 43);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 50%;
+  }
+
 @media screen and (max-width: 800px) {
     .main-container {
         top: 10px;

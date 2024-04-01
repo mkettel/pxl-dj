@@ -4,6 +4,7 @@ import { Canvas } from '@react-three/fiber'
 import Experience from './Experience.jsx'
 import Overlay from '/ui/Overlay.jsx'
 import { PlayerProvider } from './PlayerContext';
+import Rsvp from './Rsvp.jsx'
 
 
 
@@ -13,11 +14,11 @@ root.render(
     <>
         <PlayerProvider>
             <Canvas
-                
             >
                 <Experience />
             </Canvas>
             <Overlay />
+            <Rsvp />
         </PlayerProvider>
     </>
 )

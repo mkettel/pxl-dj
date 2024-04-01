@@ -15,6 +15,7 @@ export function Turntable(props) {
     const [isHovered, setIsHovered] = useState(false)
     const { togglePlay } = useContext(PlayerContext); // this will give you access to the togglePlay function
     const [isButtonPressed, setIsButtonPressed] = useState(false);
+    const { toggleModal } = useContext(PlayerContext); // this will give you access to the toggleModal function
 
     // Get textures
     const texture = useTexture('/images/bonjor.png')
@@ -66,6 +67,12 @@ export function Turntable(props) {
         }
     })
 
+     //   clone the material for the play button
+     const playButtonMaterial = materials.Main.clone()
+     playButtonMaterial.name = 'Play Button'
+     console.log('play button', playButtonMaterial);
+     
+
     // play Button hover cursor
     const playButtonHover = (e) => {
         e.stopPropagation()
@@ -85,9 +92,13 @@ export function Turntable(props) {
         togglePlay();
       };
 
+    const handleModalClick = () => {
+        toggleModal();
+    }
+   
 
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} onClick={handleModalClick}>
       <mesh
         ref={spinnyRight}
         castShadow
@@ -97,9 +108,8 @@ export function Turntable(props) {
         position={[1.407, 0.099, -0.093]}
         onPointerOver={(e) => turntableHover(e, 'spinnyRight')}
         onPointerOut={(e) => turntableHoverEnd(e, 'spinnyRight')}
-        
       >
-            <Sticker url="/images/rsvp.png" position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 0]} scale={0.55} />
+            <Sticker url="/images/rsvp.png" position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 1]} scale={0.55} onClick={handleModalClick} />
       </mesh>
       <mesh
         ref={spinnyLeft}
@@ -112,7 +122,7 @@ export function Turntable(props) {
         onPointerOut={(e) => turntableHoverEnd(e, 'spinnyRight')}
       >
         <Sticker url="/images/bonjor.png" position={[0.42, 0, 0]} rotation={[Math.PI / 2, 0, 1.5]} scale={0.22} />
-        <Sticker url="/images/rsvp.png" position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 0]} scale={0.55} />
+        <Sticker url="/images/rsvp.png" position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 0]} scale={0.55} onClick={handleModalClick} />
         {/* <Sticker url="/images/kiss-lips.png" position={[0, 0, 0.43]} rotation={[Math.PI / 2, 0, 2.2]} scale={0.23} /> */}
       </mesh>
       <group
