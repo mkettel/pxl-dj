@@ -12,23 +12,23 @@ export default function Rsvp() {
             opacity: 1,
             scale: 1,
             x: 0,
-            y: -10,
-            transition: { // spring
-                type: 'spring',
-                stiffness: 260,
-                damping: 20,
-                mass: 0.5,
-            }
-        },
-        hidden: {
-            opacity: 0,
-            scale: 0,
-            x: 0,
             y: 0,
             transition: { // spring
                 type: 'spring',
                 stiffness: 160,
-                damping: 10,
+                damping: 20,
+                mass: 1.2,
+            }
+        },
+        hidden: {
+            opacity: 0,
+            scale: 1,
+            x: -2000,
+            y: 0,
+            transition: { // spring
+                type: 'spring',
+                stiffness: 160,
+                damping: 20,
                 mass: 0.5,
             }
         }
@@ -56,12 +56,39 @@ export default function Rsvp() {
                     style={{ borderRadius: isModalOpen ? "0px" : "25px" }} 
                 >
                     <div className="modal-bucket">
+                        <div className="title">
+                            <h1>RSVP</h1>
+                        </div>
                         <div className="modal-field">
                             <div className="marker">
                                 <p>First Name</p>
                             </div>
                             <div className="input">
-                                <input type="text" placeholder="John" />
+                                <input type="text" placeholder="Renni" />
+                            </div>
+                        </div>
+                        <div className="modal-field">
+                            <div className="marker">
+                                <p>Last Name</p>
+                            </div>
+                            <div className="input">
+                                <input type="text" placeholder="Meehow" />
+                            </div>
+                        </div>
+                        <div className="modal-field">
+                            <div className="marker">
+                                <p>Buddies</p>
+                            </div>
+                            <div className="input">
+                                <input type="number" placeholder="1" />
+                            </div>
+                        </div>
+                        <div className="modal-field">
+                            <div className="marker">
+                                <p>Song Request</p>
+                            </div>
+                            <div className="input">
+                                <input type="text" placeholder="Dabeull" />
                             </div>
                         </div>
                     </div>
