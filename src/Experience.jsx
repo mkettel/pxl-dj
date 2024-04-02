@@ -4,14 +4,18 @@ import { Turntable } from './models/Turntable'
 import { useRef, useEffect, useState, Suspense } from 'react'
 import { useThree } from '@react-three/fiber'
 import Block from './Block'
+import { CompressedTurn } from './models/CompressedTurn'
 
 export default function Experience()
 {
     const controls = useRef()
     const meshFitCameraHome = useRef()
     const { size } = useThree()
-    const [position, setPosition] = useState([0, 0, 0])
     const [args, setArgs] = useState([15, 2, 5])
+    const isMobile = size.width <= 768;
+    const [position, setPosition] = useState([0, 0, 0])
+    const [cameraBoxSize, setCameraBoxSize] = useState(isMobile ? [2.7, 3, 4] : [7.2, 3, 3]) // sets the box to have the camera focus at
+    const [cameraBoxPosition, setCameraBoxPosition] = useState(isMobile ? [2.5, .5, 1] : [0, 0, 0]) // sets the box to have the camera focus at
 
     const intro = async () => {
         controls.current.rotate(0.6, -1, true)
@@ -36,10 +40,12 @@ export default function Experience()
 
     useEffect(() => {
         // Update the position based on the screen size
-        const isMobile = size.width <= 768;
-        setPosition(isMobile ? [0, 0, 1] : [0, 0, 0]);
+        // const isMobile = size.width <= 768;
+        setPosition(isMobile ? [0, 0, 2.5] : [0, 0, 0]);
         setArgs(isMobile ? [7, 2, 5] : [15, 2, 5]);
-      }, [size]);  
+        setCameraBoxSize(isMobile ? [2.9, 2, 3.5] : [7.2, 3, 3]);
+        setCameraBoxPosition(isMobile ? [2.5, .5, 1.5] : [0, 0.5, 0]);
+      }, [size, isMobile, setPosition, setArgs, setCameraBoxSize, setCameraBoxPosition]);  
 
 
     return <>
@@ -47,21 +53,24 @@ export default function Experience()
         {/* <Perf position="top-left" /> */}
 
         {/* <OrbitControls makeDefault /> */}
-        <CameraControls ref={controls} minDistance={3.4} maxDistance={13} minPolarAngle={-5} maxPolarAngle={0.1} minAzimuthAngle={-0.05} maxAzimuthAngle={0.01} />
+        {/* <CameraControls ref={controls} minDistance={3.4} maxDistance={13} minPolarAngle={-5} maxPolarAngle={0.1} minAzimuthAngle={-0.05} maxAzimuthAngle={0.01} /> */}
+        <CameraControls ref={controls} />
 
         <directionalLight castShadow position={ [ 1, 4, 3 ] } intensity={ 4.5 } />
         <ambientLight intensity={ 1 } />
 
         <Environment preset="apartment"  />
 
-        <mesh ref={meshFitCameraHome} position={[0, .5, 0]}>
-            <boxGeometry args={ [ 7.2, 3, 3 ] } />
-            <meshStandardMaterial color="hotpink" transparent opacity={0} />
+        <mesh ref={meshFitCameraHome} position={cameraBoxPosition}>
+            <boxGeometry args={ cameraBoxSize } />
+            <meshStandardMaterial color="hotpink" transparent opacity={0.0} />
         </mesh>
 
 
         <Suspense fallback={<Block args={args} setArgs={setArgs}  />}>
-            <Turntable position={position} scale={1.7} rotation={[-0.4, 0, 0]} />
+            {isMobile ? <CompressedTurn position={position} scale={1.7} rotation={[0, 0, 0]} /> : <Turntable position={position} scale={1.7} rotation={[-0.4, 0, 0]} />}
+            {/* <Turntable position={position} scale={1.7} rotation={[-0.4, 0, 0]} /> */}
+            {/* <CompressedTurn position={position} scale={1.7} rotation={[0, 0, 0]} /> */}
         </Suspense>
 
     </>
