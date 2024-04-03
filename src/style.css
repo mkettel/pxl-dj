@@ -91,7 +91,7 @@ font-family: 'Britney', cursive;
     z-index: 100;
   }
   .modal-bucket {
-    min-width: 50vw;
+    min-width: 55vw;
     min-height: 60vh;
     max-width: 60vw;
     border: 1px solid white;
@@ -118,6 +118,7 @@ font-family: 'Britney', cursive;
     gap: 50px;
     margin-bottom: 40px;
     align-items: center;
+    justify-content: space-between;
   }
   .modal-bucket .modal-field .marker {
     padding: 5px;
@@ -139,7 +140,8 @@ font-family: 'Britney', cursive;
     text-shadow: rgb(197, 67, 108) 0px 2px 23px;
   }
   .modal-bucket .modal-field .input {
-    width: 100%;
+    /* width: 100%; */
+    min-width: 50%;
   }
   .modal-bucket .modal-field input {
     /* background-color: rgb(43, 43, 43); */
@@ -201,13 +203,31 @@ font-family: 'Britney', cursive;
     /* RSVP MODAL */
     .modal-bucket {
         padding: 30px;
+        min-width: 65vw;
+        max-height: 80vh;
+        overflow: scroll;
+    }
+    .modal-bucket .title {
+        margin-bottom: 20px;
     }
     .modal-bucket .title h1 {
-        font-size: 42px;
+        font-size: 32px;
       }
 
+    .modal-bucket .field-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .modal-bucket .modal-field {
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-start;
+    }
     .modal-bucket .modal-field .marker p {
-        font-size: 12px;
+        font-size: 14px;
+    }
+    .modal-bucket .modal-field .input {
+        width: 100%;
     }
     
 }

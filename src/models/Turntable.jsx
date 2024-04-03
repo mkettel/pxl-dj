@@ -110,6 +110,8 @@ export function Turntable(props) {
         onPointerOut={(e) => turntableHoverEnd(e, 'spinnyRight')}
       >
             <Sticker url="/images/rsvp.png" position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 1]} scale={0.55} onClick={handleModalClick} />
+            <Sticker url="/images/rs-hat.png" position={[0.42, 0, -0.1]} rotation={[Math.PI / 2, 0, -2]} scale={0.27} onClick={handleModalClick} />
+            <Sticker url="/images/kiss-lips.png" position={[0, 0, 0.43]} rotation={[Math.PI / 2, 0, 2.2]} scale={0.29} />
       </mesh>
       <mesh
         ref={spinnyLeft}
@@ -1314,7 +1316,6 @@ export function Turntable(props) {
         geometry={nodes.Cube_3.geometry}
         material={materials['ddj-sb3-front']}
       >
-            
 
         </mesh>
     </group>

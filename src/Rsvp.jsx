@@ -59,37 +59,42 @@ export default function Rsvp() {
                         <div className="title">
                             <h1>RSVP</h1>
                         </div>
-                        <div className="modal-field">
-                            <div className="marker">
-                                <p>First Name</p>
+                        <div className="field-container">
+                            <div className="modal-field">
+                                <div className="marker">
+                                    <p>First Name</p>
+                                </div>
+                                <div className="input">
+                                    <input type="text" placeholder="Renni" />
+                                </div>
                             </div>
-                            <div className="input">
-                                <input type="text" placeholder="Renni" />
+                            <div className="modal-field">
+                                <div className="marker">
+                                    <p>Last Name</p>
+                                </div>
+                                <div className="input">
+                                    <input type="text" placeholder="Meehow" />
+                                </div>
+                            </div>
+                            <div className="modal-field">
+                                <div className="marker">
+                                    <p>Buddies</p>
+                                </div>
+                                <div className="input">
+                                    <input type="number" placeholder="1" />
+                                </div>
+                            </div>
+                            <div className="modal-field">
+                                <div className="marker">
+                                    <p>Song Request</p>
+                                </div>
+                                <div className="input">
+                                    <input type="text" placeholder="Dabeull" />
+                                </div>
                             </div>
                         </div>
-                        <div className="modal-field">
-                            <div className="marker">
-                                <p>Last Name</p>
-                            </div>
-                            <div className="input">
-                                <input type="text" placeholder="Meehow" />
-                            </div>
-                        </div>
-                        <div className="modal-field">
-                            <div className="marker">
-                                <p>Buddies</p>
-                            </div>
-                            <div className="input">
-                                <input type="number" placeholder="1" />
-                            </div>
-                        </div>
-                        <div className="modal-field">
-                            <div className="marker">
-                                <p>Song Request</p>
-                            </div>
-                            <div className="input">
-                                <input type="text" placeholder="Dabeull" />
-                            </div>
+                        <div className="submit">
+                            <p className="submit-text">Submit</p>
                         </div>
                     </div>
                 </motion.div>

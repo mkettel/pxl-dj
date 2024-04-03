@@ -5,6 +5,7 @@ import { useRef, useEffect, useState, Suspense } from 'react'
 import { useThree } from '@react-three/fiber'
 import Block from './Block'
 import { CompressedTurn } from './models/CompressedTurn'
+import DiscoShaderMaterial from './BGShader'
 
 export default function Experience()
 {
@@ -14,8 +15,8 @@ export default function Experience()
     const [args, setArgs] = useState([15, 2, 5])
     const isMobile = size.width <= 768;
     const [position, setPosition] = useState([0, 0, 0])
-    const [cameraBoxSize, setCameraBoxSize] = useState(isMobile ? [2.7, 3, 4] : [7.2, 3, 3]) // sets the box to have the camera focus at
-    const [cameraBoxPosition, setCameraBoxPosition] = useState(isMobile ? [2.5, .5, 1] : [0, 0, 0]) // sets the box to have the camera focus at
+    const [cameraBoxSize, setCameraBoxSize] = useState(isMobile ? [3.5, 3, 4] : [7.2, 3, 3]) // sets the box to have the camera focus at
+    const [cameraBoxPosition, setCameraBoxPosition] = useState(isMobile ? [2.5, .5, 1.4] : [0, 0, 0]) // sets the box to have the camera focus at
 
     const intro = async () => {
         controls.current.rotate(0.6, -1, true)
@@ -41,10 +42,10 @@ export default function Experience()
     useEffect(() => {
         // Update the position based on the screen size
         // const isMobile = size.width <= 768;
-        setPosition(isMobile ? [0, 0, 2.5] : [0, 0, 0]);
+        setPosition(isMobile ? [0, 0, 2.3] : [0, 0, 0]);
         setArgs(isMobile ? [7, 2, 5] : [15, 2, 5]);
-        setCameraBoxSize(isMobile ? [2.9, 2, 3.5] : [7.2, 3, 3]);
-        setCameraBoxPosition(isMobile ? [2.5, .5, 1.5] : [0, 0.5, 0]);
+        setCameraBoxSize(isMobile ? [3.5, 3, 4] : [7.2, 3, 3]);
+        setCameraBoxPosition(isMobile ? [2.5, .5, 1.4] : [0, 0.5, 0]);
       }, [size, isMobile, setPosition, setArgs, setCameraBoxSize, setCameraBoxPosition]);  
 
 
@@ -68,10 +69,15 @@ export default function Experience()
 
 
         <Suspense fallback={<Block args={args} setArgs={setArgs}  />}>
-            {isMobile ? <CompressedTurn position={position} scale={1.7} rotation={[0, 0, 0]} /> : <Turntable position={position} scale={1.7} rotation={[-0.4, 0, 0]} />}
-            {/* <Turntable position={position} scale={1.7} rotation={[-0.4, 0, 0]} /> */}
+            {/* {isMobile ? <CompressedTurn position={position} scale={1.7} rotation={[-0.2, 0, 0]} /> : <Turntable position={position} scale={1.7} rotation={[-0.4, 0, 0]} />} */}
+            <Turntable position={position} scale={1.7} rotation={[-0.4, 0, 0]} />
             {/* <CompressedTurn position={position} scale={1.7} rotation={[0, 0, 0]} /> */}
         </Suspense>
+
+        <mesh rotation={[2.0, 0, 0]} position={[0, 0, -8]}>
+            <planeGeometry args={[100, 100]} />
+            <DiscoShaderMaterial />
+        </mesh>
 
     </>
 }
