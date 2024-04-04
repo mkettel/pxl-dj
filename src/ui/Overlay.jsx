@@ -85,7 +85,7 @@ export default function Overlay() {
 
               <YouTube
                 id='player'
-                videoId={vidArray[currentIndex]}
+                videoId={VIDEO_ID}
                 onReady={handlePlayerReady}
                 onStateChange={handleStateChange}
                 onPlay={() => console.log('Playing')}
