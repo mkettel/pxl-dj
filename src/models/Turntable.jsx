@@ -111,11 +111,9 @@ export function Turntable(props) {
         onPointerOut={(e) => turntableHoverEnd(e, 'spinnyRight')}
         onClick={handleModalClick}
       >
-            <Sticker url="/images/rsvp.png" position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 1]} scale={0.55} onClick={handleModalClick} />
-            <Sticker url="/images/bday.png" position={[0.32, 0, -0.20]} rotation={[Math.PI / 2, 0, -2]} scale={[.5, .10, 1]} onClick={handleModalClick} />
-            <Sticker url="/images/lips-trans.png" position={[0.08, 0, 0.43]} rotation={[Math.PI / 2, 0, 2.2]} scale={[.22, .20, 1]} />
-            {/* <Sticker url="/images/wangs-trans.png" position={[0.04, 0.2, -0.43]} rotation={[Math.PI / 2, 0, -2.5]} scale={[.16, .150, 1]} /> */}
-            {/* <Sticker url="/images/bolt-trans.png" position={[0.40, 0.2, 0.15]} rotation={[Math.PI / 2, 0, -2.5]} scale={[.23, .25, 1]} /> */}
+            <Sticker url="/images/rsvp.png" position={[0, 0.0, 0]} rotation={[Math.PI / 2, 0, 1]} scale={0.55} onClick={handleModalClick} />
+            <Sticker url="/images/bday.png" position={[0.32, 0.0, -0.20]} rotation={[Math.PI / 2, 0, -2]} scale={[.5, .10, 1]} onClick={handleModalClick} />
+            <Sticker url="/images/lips-trans.png" position={[0.08, 0.0, 0.43]} rotation={[Math.PI / 2, 0, 2.2]} scale={[.25, .20, 1]} />
       </mesh>
       <mesh
         ref={spinnyLeft}
