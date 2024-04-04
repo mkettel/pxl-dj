@@ -1,4 +1,4 @@
-import { OrbitControls, Environment, CameraControls } from '@react-three/drei'
+import { OrbitControls, Environment, CameraControls, Backdrop } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import { Turntable } from './models/Turntable'
 import { useRef, useEffect, useState, Suspense } from 'react'
@@ -54,8 +54,8 @@ export default function Experience()
         {/* <Perf position="top-left" /> */}
 
         {/* <OrbitControls makeDefault /> */}
-        <CameraControls ref={controls} minDistance={3.4} maxDistance={13} minPolarAngle={-5} maxPolarAngle={0.1} minAzimuthAngle={-0.05} maxAzimuthAngle={0.01} />
-        {/* <CameraControls ref={controls} /> */}
+        {/* <CameraControls ref={controls} minDistance={3.4} maxDistance={13} minPolarAngle={-5} maxPolarAngle={0.1} minAzimuthAngle={-0.05} maxAzimuthAngle={0.01} /> */}
+        <CameraControls ref={controls} />
 
         <directionalLight castShadow position={ [ 1, 4, 3 ] } intensity={ 4.5 } />
         <ambientLight intensity={ 1 } />
@@ -74,12 +74,8 @@ export default function Experience()
             {/* <CompressedTurn position={position} scale={1.7} rotation={[0, 0, 0]} /> */}
         </Suspense>
 
-        <mesh rotation={[0.0, 0, 0]} position={[0, 0, -18]}>
-            <planeGeometry args={[50, 50]} />
-            <DiscoShaderMaterial />
-        </mesh>
-        <mesh rotation={[-2.0, 0, 0]} position={[0, 0, 5]}>
-            <planeGeometry args={[50, 50]} />
+        <mesh rotation={[1.7, 0, 0]} position={[0, 0, -5]}>
+            <sphereGeometry args={[50, 50]} />
             <DiscoShaderMaterial />
         </mesh>
 
