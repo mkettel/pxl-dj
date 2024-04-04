@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import YouTube from 'react-youtube';
 import PlayerContext from '../PlayerContext';
+import { motion } from 'framer-motion';
 
 export default function Overlay() {
     const { isPlaying, setPlayingState } = useContext(PlayerContext);
@@ -39,21 +40,47 @@ export default function Overlay() {
       console.log('current index', currentIndex);
     }, [player, isPlaying, currentIndex, vidArray]);
 
+
+    const containerVariants = {
+      hidden: { opacity: 0 },
+      visible: { opacity: 1, transition: { duration: 1.5 } },
+    };
+    
+    const titleVariants = {
+      hidden: { y: 0, opacity: 0 },
+      visible: { y: 0, opacity: 1, transition: { duration: 1.5, delay: 0.4 } },
+    };
+    
+    const dataVariants = {
+      hidden: { x: 0, opacity: 0 },
+      visible: { x: 0, opacity: 1, transition: { duration: 1.5, delay: 0.6 } },
+    };
+
     return (
         <>
-            <div className="main-container">
-                <h1 className="title">DJ REN</h1>
-            </div>
-            <div className="right-container">
-                <div className="data">
-                    <h2 className="header">WHEN:</h2>
-                    <p className="text">April 26th, 2024</p>
-                </div>
-                <div className="data">
-                    <h2 className="header">WHERE:</h2>
-                    <p className="text">160 W 75th St. Apt, 2B</p>
-                </div>
-            </div>
+            <motion.div 
+              className="main-container" 
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              >
+                <motion.h1 className="title" variants={titleVariants} >DJ REN</motion.h1>
+            </motion.div>
+            <motion.div 
+            className="right-container"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            >
+                <motion.div className="data" variants={dataVariants}>
+                    <motion.h2 className="header">WHEN:</motion.h2>
+                    <motion.p className="text">April 26th, 2024</motion.p>
+                </motion.div>
+                <motion.div className="data" variants={dataVariants}>
+                    <motion.h2 className="header" >WHERE:</motion.h2 >
+                    <motion.p className="text">160 W 75th St. Apt, 2B</motion.p>
+                </motion.div>
+            </motion.div>
             <div className="video">
 
               <YouTube
