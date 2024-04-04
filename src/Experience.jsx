@@ -1,7 +1,7 @@
 import { OrbitControls, Environment, CameraControls, useProgress } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import { Turntable } from './models/Turntable'
-import { useRef, useEffect, useState, Suspense } from 'react'
+import { useRef, useEffect, useState, Suspense, useMemo } from 'react'
 import { useThree } from '@react-three/fiber'
 import Block from './Block'
 import { CompressedTurn } from './models/CompressedTurn'
@@ -12,11 +12,11 @@ export default function Experience()
     const controls = useRef()
     const meshFitCameraHome = useRef()
     const { size } = useThree()
-    const [args, setArgs] = useState([7, 2, 5])
     const isMobile = size.width <= 768;
-    const [position, setPosition] = useState([0, 0, 0])
-    const [cameraBoxSize, setCameraBoxSize] = useState(isMobile ? [3.7, 3, 4] : [7.2, 3, 3]) // sets the box to have the camera focus at
-    const [cameraBoxPosition, setCameraBoxPosition] = useState(isMobile ? [2.5, .5, 1.4] : [0, 0, 0]) // sets the box to have the camera focus at
+    const args = useMemo(() => (isMobile ? [7, 2, 5] : [15, 2, 5]), [isMobile]);
+    const position = useMemo(() => (isMobile ? [0, 0, 2.7] : [0, 0, 0]), [isMobile]);
+    const cameraBoxSize = useMemo(() => (isMobile ? [3.7, 3, 4] : [7.2, 3, 3]), [isMobile]);
+    const cameraBoxPosition = useMemo(() => (isMobile ? [2.5, 0.5, 1.4] : [0, 0.5, 0]), [isMobile]);
     const { progress } = useProgress()
 
     const intro = async () => {
@@ -42,19 +42,19 @@ export default function Experience()
         return () => window.removeEventListener('resize', fitCameraHome)
     })
 
-    useEffect(() => {
-        // Update the position based on the screen size
-        // const isMobile = size.width <= 768;
-        setPosition(isMobile ? [0, 0, 2.7] : [0, 0, 0]);
-        setArgs(isMobile ? [7, 2, 5] : [15, 2, 5]);
-        setCameraBoxSize(isMobile ? [3.7, 3, 4] : [7.2, 3, 3]);
-        setCameraBoxPosition(isMobile ? [2.5, .5, 1.4] : [0, 0.5, 0]);
-      }, [size, isMobile, setPosition, setArgs, setCameraBoxSize, setCameraBoxPosition]);  
+    // useEffect(() => {
+    //     // Update the position based on the screen size
+    //     // const isMobile = size.width <= 768;
+    //     setPosition(isMobile ? [0, 0, 2.7] : [0, 0, 0]);
+    //     setArgs(isMobile ? [7, 2, 5] : [15, 2, 5]);
+    //     setCameraBoxSize(isMobile ? [3.7, 3, 4] : [7.2, 3, 3]);
+    //     setCameraBoxPosition(isMobile ? [2.5, .5, 1.4] : [0, 0.5, 0]);
+    //   }, [size, isMobile, setPosition, setArgs, setCameraBoxSize, setCameraBoxPosition]);  
 
 
     return <>
 
-        {/* <Perf position="top-left" /> */}
+        <Perf position="top-left" />
 
         {/* <OrbitControls makeDefault /> */}
         {/* <CameraControls ref={controls} minDistance={3.4} maxDistance={13} minPolarAngle={-5} maxPolarAngle={0.1} minAzimuthAngle={-0.05} maxAzimuthAngle={0.01} /> */}
@@ -71,7 +71,7 @@ export default function Experience()
         </mesh>
 
 
-        <Suspense fallback={<Block args={args} setArgs={setArgs}  />}>
+        <Suspense fallback={<Block args={args}  />}>
             {/* {isMobile ? <CompressedTurn position={position} scale={1.7} rotation={[-0.2, 0, 0]} /> : <Turntable position={position} scale={1.7} rotation={[-0.4, 0, 0]} />} */}
             <Turntable position={position} scale={1.7} rotation={[-0.4, 0, 0]} />
             {/* <CompressedTurn position={position} scale={1.7} rotation={[0, 0, 0]} /> */}

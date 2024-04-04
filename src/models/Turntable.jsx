@@ -104,8 +104,6 @@ export function Turntable(props) {
     <group {...props} dispose={null} >
       <mesh
         ref={spinnyRight}
-        castShadow
-        receiveShadow
         geometry={nodes.Platter_2.geometry}
         material={materials['Main.001']}
         position={[1.407, 0.099, -0.093]}
@@ -121,8 +119,6 @@ export function Turntable(props) {
       </mesh>
       <mesh
         ref={spinnyLeft}
-        castShadow
-        receiveShadow
         geometry={nodes.Platter_1.geometry}
         material={materials['Main.001']}
         position={[-1.4, 0.137, -0.093]}
@@ -138,14 +134,10 @@ export function Turntable(props) {
         rotation={[Math.PI / 2, 0, 0]}
         scale={[-0.037, -0.055, -0.037]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder028.geometry}
           material={materials.Material}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder028_1.geometry}
           material={materials['Metal01.002']}
         />
@@ -155,14 +147,10 @@ export function Turntable(props) {
         rotation={[Math.PI / 2, 0, 0]}
         scale={[-0.037, -0.055, -0.037]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder027.geometry}
           material={materials.Material}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder027_1.geometry}
           material={materials['Metal01.001']}
         />
@@ -172,22 +160,16 @@ export function Turntable(props) {
         rotation={[Math.PI / 2, 0, 0]}
         scale={[-0.053, -0.08, -0.053]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder029.geometry}
           material={materials.Material}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder029_1.geometry}
           material={materials['Plastic03.002']}
         />
       </group>
-      <mesh castShadow receiveShadow geometry={nodes.Main001.geometry} material={materials.Logo} />
+      <mesh geometry={nodes.Main001.geometry} material={materials.Logo} />
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Browse.geometry}
         material={materials['Plastic03.001']}
         position={[0, 0.206, -0.937]}
@@ -196,402 +178,284 @@ export function Turntable(props) {
       <group position={[0, 0.19, -0.255]}>
         <mesh
         //  bottom middle knob
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder.geometry}
           material={materials['Plastic03.001']}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder_1.geometry}
           material={materials.edge_color123118118255}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder_2.geometry}
           material={materials.Main}
         />
       </group>
       <group position={[0, 0.19, -0.628]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder001.geometry}
           material={materials['Plastic03.001']}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder001_1.geometry}
           material={materials.edge_color123118118255}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder001_2.geometry}
           material={materials.Main}
         />
       </group>
       <group position={[0.311, 0.19, -0.628]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder002.geometry}
           material={materials['Plastic03.001']}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder002_1.geometry}
           material={materials.edge_color123118118255}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder002_2.geometry}
           material={materials.Main}
         />
       </group>
       <group position={[0.311, 0.19, -0.873]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder003.geometry}
           material={materials['Plastic03.001']}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder003_1.geometry}
           material={materials.edge_color123118118255}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder003_2.geometry}
           material={materials.Main}
         />
       </group>
       <group position={[0.311, 0.19, -0.381]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder004.geometry}
           material={materials['Plastic03.001']}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder004_1.geometry}
           material={materials.edge_color123118118255}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder004_2.geometry}
           material={materials.Main}
         />
       </group>
       <group position={[0.311, 0.19, -0.139]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder005.geometry}
           material={materials['Plastic03.001']}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder005_1.geometry}
           material={materials.edge_color123118118255}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder005_2.geometry}
           material={materials.Main}
         />
       </group>
       <group position={[0.311, 0.19, 0.108]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder006.geometry}
           material={materials['Plastic03.001']}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder006_1.geometry}
           material={materials.edge_color123118118255}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder006_2.geometry}
           material={materials.Main}
         />
       </group>
       <group position={[1.493, 0.19, -0.939]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder007.geometry}
           material={materials['Plastic03.001']}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder007_1.geometry}
           material={materials.edge_color123118118255}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder007_2.geometry}
           material={materials.Main}
         />
       </group>
       <group position={[-0.314, 0.19, -0.628]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder008.geometry}
           material={materials['Plastic03.001']}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder008_1.geometry}
           material={materials.edge_color123118118255}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder008_2.geometry}
           material={materials.Main}
         />
       </group>
       <group position={[-0.314, 0.19, -0.873]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder009.geometry}
           material={materials['Plastic03.001']}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder009_1.geometry}
           material={materials.edge_color123118118255}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder009_2.geometry}
           material={materials.Main}
         />
       </group>
       <group position={[-0.314, 0.19, -0.381]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder010.geometry}
           material={materials['Plastic03.001']}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder010_1.geometry}
           material={materials.edge_color123118118255}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder010_2.geometry}
           material={materials.Main}
         />
       </group>
       <group position={[-0.314, 0.19, -0.139]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder011.geometry}
           material={materials['Plastic03.001']}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder011_1.geometry}
           material={materials.edge_color123118118255}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder011_2.geometry}
           material={materials.Main}
         />
       </group>
       <group position={[-0.314, 0.19, 0.108]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder012.geometry}
           material={materials['Plastic03.001']}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder012_1.geometry}
           material={materials.edge_color123118118255}
         />
       </group>
       <group position={[-1.327, 0.19, -0.939]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder013.geometry}
           material={materials['Plastic03.001']}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder013_1.geometry}
           material={materials.edge_color123118118255}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder013_2.geometry}
           material={materials.Main}
         />
       </group>
       <group position={[-1.789, -0.135, -1.292]} rotation={[-Math.PI / 2, 0, 0]} scale={0.636}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder030.geometry}
           material={materials.material}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder030_1.geometry}
           material={materials['Plastic03.001']}
         />
       </group>
       <group position={[-2.097, 0.108, 1.013]} scale={[1.457, 0.092, 1.457]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder019.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder019_1.geometry}
           material={materials.Black}
         />
       </group>
       <group position={[-2.097, 0.108, 0.741]} scale={[1.457, 0.092, 1.457]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder020.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder020_1.geometry}
           material={materials.Black}
         />
       </group>
       <group position={[-2.097, 0.108, 0.483]} scale={[0.735, 0.046, 0.735]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder021.geometry}
           material={materials.Main}
         />
         <mesh
          // left sync knob
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder021_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-2.096, 0.101, -0.681]} scale={[0.765, 0.065, 0.765]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder022.geometry}
           material={materials.Main}
           
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder022_1.geometry}
           material={materials['Green Light']}
         />
       </group>
       <group position={[-0.725, 0.012, 0.61]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube010.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube010_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.542, 0.012, 0.61]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube007.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube007_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-2.096, 0.012, -1.004]} scale={[0.612, 1, 1]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube015.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube015_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.856, 0.012, -1.004]} scale={[0.612, 1, 1]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube016.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube016_1.geometry}
           material={materials['Red Light']}
         />
@@ -599,49 +463,35 @@ export function Turntable(props) {
       <group position={[-1.616, 0.012, -1.004]} scale={[0.612, 1, 1]}>
         <mesh
         
-          castShadow
-          receiveShadow
           geometry={nodes.Cube017.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube017_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.8, 0.012, 0.61]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube006.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube006_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.04, 0.012, -1.004]} scale={[0.612, 1, 1]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube018.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube018_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Load.geometry}
         material={materials.Black}
         position={[-0.312, 0.012, -1.169]}
@@ -649,35 +499,25 @@ export function Turntable(props) {
       />
       <group position={[-1.282, 0.012, 0.61]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube008.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube008_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.023, 0.012, 0.61]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube009.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube009_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Shift_1.geometry}
         material={materials.Black}
         position={[-2.095, 0.012, 0.243]}
@@ -685,14 +525,10 @@ export function Turntable(props) {
       />
       <group position={[-0.725, 0.012, 0.42]} scale={[0.612, 1, 1]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube011.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube011_1.geometry}
           material={materials['Red Light']}
         />
@@ -701,8 +537,6 @@ export function Turntable(props) {
         
         <mesh
           // PLAY / PAUSE BUTTON --------------------------------------------------------------------------------------------------------------------
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder023.geometry}
           // geometry={new THREE.SphereGeometry(0.05, 10, 10)}
           material={materials.Main}
@@ -713,8 +547,6 @@ export function Turntable(props) {
           position={[0, isButtonPressed ? -0.15 : 0, 0]}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder023_1.geometry}
           material={materials.Black}
           position={[0, isButtonPressed ? -0.12 : 0, 0]}
@@ -741,15 +573,11 @@ export function Turntable(props) {
       <group position={[0.726, 0.108, 0.741]} scale={[1.457, 0.092, 1.457]}>
         <mesh
         // CUE on the right side
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder024.geometry}
           material={materials.Main}
         />
         <mesh
          
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder024_1.geometry}
           material={materials.Black}
         />
@@ -757,44 +585,32 @@ export function Turntable(props) {
       <group position={[0.726, 0.108, 0.483]} scale={[0.735, 0.046, 0.735]}>
         <mesh
          // sync right side
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder025.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder025_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[0.727, 0.101, -0.681]} scale={[0.765, 0.065, 0.765]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder026.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cylinder026_1.geometry}
           material={materials['Green Light']}
           
         />
       </group>
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes['12x001'].geometry}
         material={materials.Black}
         position={[2.029, 0.012, 0.77]}
         scale={[0.392, 1, 1]}
       />
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes['2x001'].geometry}
         material={materials.Black}
         position={[2.167, 0.012, 0.77]}
@@ -802,59 +618,43 @@ export function Turntable(props) {
       />
       <group position={[2.097, 0.012, 0.61]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube028.geometry}
           material={materials.Main}
           
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube028_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-0.073, -0.13, 0.128]} scale={[0.326, 2.364, 1.171]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube021.geometry}
           material={materials.Main}
           
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube021_1.geometry}
           material={materials['Green Light']}
         />
       </group>
       <group position={[0.071, -0.13, 0.128]} scale={[0.326, 2.364, 1.171]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube022.geometry}
           material={materials.Main}
           
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube022_1.geometry}
           material={materials['Green Light']}
         />
       </group>
       <group position={[1.28, 0.012, 0.61]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube025.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube025_1.geometry}
           material={materials['Red Light']}
         />
@@ -862,85 +662,61 @@ export function Turntable(props) {
       <group position={[0.726, 0.012, -1.004]} scale={[0.612, 1, 1]}>
         <mesh
         
-          castShadow
-          receiveShadow
           geometry={nodes.Cube033.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube033_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[0.966, 0.012, -1.004]} scale={[0.612, 1, 1]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube034.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube034_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[1.206, 0.012, -1.004]} scale={[0.612, 1, 1]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube035.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube035_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[1.022, 0.012, 0.61]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube024.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube024_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[1.782, 0.012, -1.004]} scale={[0.612, 1, 1]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube036.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube036_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[0, -0.043, -0.078]} scale={[0.627, 1.504, 1.051]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube020.geometry}
           material={materials.Main}
           
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube020_1.geometry}
           material={materials['Green Light']}
           
@@ -948,36 +724,26 @@ export function Turntable(props) {
       </group>
       <group position={[1.54, 0.012, 0.61]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube026.geometry}
           material={materials.Main}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube026_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[1.799, 0.012, 0.61]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube027.geometry}
           material={materials.Main}
           
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube027_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Shift001.geometry}
         material={materials.Black}
         position={[0.728, 0.012, 0.243]}
@@ -986,38 +752,28 @@ export function Turntable(props) {
       />
       <group position={[2.097, 0.012, 0.42]} scale={[0.612, 1, 1]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube029.geometry}
           material={materials.Main}
           
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube029_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes['12x'].geometry}
         material={materials.Black}
         position={[-0.793, 0.012, 0.77]}
         scale={[0.392, 1, 1]}
       />
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes['2x'].geometry}
         material={materials.Black}
         position={[-0.655, 0.012, 0.77]}
         scale={[0.392, 1, 1]}
       />
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Load_2.geometry}
         material={materials.Black}
         position={[0.313, 0.012, -1.169]}
@@ -1025,43 +781,31 @@ export function Turntable(props) {
       />
       <group position={[-0.313, 0.132, 0.623]} scale={[0.098, 0.124, 0.044]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube001.geometry}
           material={materials['Plastic03.001']}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube001_1.geometry}
           material={materials.edge_color123118118255}
         />
       </group>
       <group position={[-0.726, 0.132, -0.902]} scale={[0.074, 0.124, 0.044]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube005.geometry}
           material={materials['Plastic03.001']}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube005_1.geometry}
           material={materials.edge_color123118118255}
         />
       </group>
       <group position={[0.313, 0.132, 0.623]} scale={[0.098, 0.124, 0.044]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube002.geometry}
           material={materials['Plastic03.001']}
           // bottom right slider
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube002_1.geometry}
           material={materials.edge_color123118118255}
         />
@@ -1071,275 +815,197 @@ export function Turntable(props) {
         rotation={[0, -Math.PI / 2, 0]}
         scale={[0.098, 0.124, 0.044]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube003.geometry}
           material={materials['Plastic03.001']}
         //   Bottom slider
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube003_1.geometry}
           material={materials.edge_color123118118255}
         />
       </group>
       <group position={[-0.741, 0.132, -0.902]} scale={[0.074, 0.124, 0.044]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube038.geometry}
           material={materials['Plastic03.001']}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube038_1.geometry}
           material={materials.edge_color123118118255}
         />
       </group>
       <group position={[-1.8, 0.012, 1.077]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube004.geometry}
           material={materials.Black}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube004_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.8, 0.012, 1.077]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube039.geometry}
           material={materials.Black}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube039_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.8, 0.012, 1.077]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube040.geometry}
           material={materials.Black}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube040_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.8, 0.012, 1.077]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube041.geometry}
           material={materials.Black}
           
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube041_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.8, 0.012, 1.077]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube042.geometry}
           material={materials.Black}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube042_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.8, 0.012, 1.077]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube043.geometry}
           material={materials.Black}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube043_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.8, 0.012, 1.077]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube044.geometry}
           material={materials.Black}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube044_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.8, 0.012, 1.077]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube045.geometry}
           material={materials.Black}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube045_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.8, 0.012, 1.077]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube046.geometry}
           material={materials.Black}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube046_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.8, 0.012, 1.077]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube047.geometry}
           material={materials.Black}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube047_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.8, 0.012, 1.077]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube048.geometry}
           material={materials.Black}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube048_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.8, 0.012, 1.077]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube049.geometry}
           material={materials.Black}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube049_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.8, 0.012, 1.077]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube050.geometry}
           material={materials.Black}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube050_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.8, 0.012, 1.077]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube051.geometry}
           material={materials.Black}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube051_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.8, 0.012, 1.077]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube052.geometry}
           material={materials.Black}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube052_1.geometry}
           material={materials['Red Light']}
         />
       </group>
       <group position={[-1.8, 0.012, 1.077]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube053.geometry}
           material={materials.Black}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube053_1.geometry}
           material={materials['Red Light']}
         />
       </group>
-      <mesh castShadow receiveShadow geometry={nodes.Cube.geometry} material={materials.Main} />
+      <mesh geometry={nodes.Cube.geometry} material={materials.Main} />
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Cube_1.geometry}
         material={materials.Material}
       />
       <mesh
         // Bottom
-        castShadow
-        receiveShadow
         geometry={nodes.Cube_2.geometry}
         material={materials.Plastic03}
       />
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Cube_3.geometry}
         material={materials['ddj-sb3-front']}
       >
@@ -1354,7 +1020,7 @@ function Sticker({ url, ...props }) {
     const emoji = useTexture(url)
     return (
       <Decal  {...props}>
-        <meshPhysicalMaterial
+        {/* <meshPhysicalMaterial
           transparent
           polygonOffset
           polygonOffsetFactor={-10}
@@ -1368,6 +1034,17 @@ function Sticker({ url, ...props }) {
           clearcoat={0.5}
           metalness={0.75}
           toneMapped={false}
+        /> */}
+        <meshStandardMaterial
+          transparent
+          map={emoji}
+          map-flipY={false}
+          map-anisotropy={16}
+          roughness={1}
+          toneMapped={false}
+          polygonOffset
+          polygonOffsetFactor={-10}
+          side={THREE.DoubleSide}
         />
       </Decal>
     )

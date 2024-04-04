@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Text } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 
-export default function Suspense({ args, setArgs }) {
+export default function Suspense({ args }) {
     const { size } = useThree();
 
     const isMobile = size.width <= 768;
