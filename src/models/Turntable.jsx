@@ -704,6 +704,7 @@ export function Turntable(props) {
           geometry={nodes.Cylinder023.geometry}
           material={materials.Main}
           onClick={handleButtonClick}
+          onTouchStart={handleModalClick} // for mobile
           onPointerOver={playButtonHover}
           onPointerOut={playButtonHoverEnd}
           position={[0, isButtonPressed ? -0.15 : 0, 0]}
