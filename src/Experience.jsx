@@ -60,7 +60,7 @@ export default function Experience()
         <directionalLight castShadow position={ [ 1, 4, 3 ] } intensity={ 4.5 } />
         <ambientLight intensity={ 1 } />
 
-        <Environment preset="apartment"  />
+        <Environment preset="apartment" />
 
         <mesh ref={meshFitCameraHome} position={cameraBoxPosition}>
             <boxGeometry args={ cameraBoxSize } />
@@ -74,10 +74,14 @@ export default function Experience()
             {/* <CompressedTurn position={position} scale={1.7} rotation={[0, 0, 0]} /> */}
         </Suspense>
 
-        {/* <mesh rotation={[2.0, 0, 0]} position={[0, 0, -8]}>
-            <planeGeometry args={[100, 100]} />
+        <mesh rotation={[0.0, 0, 0]} position={[0, 0, -18]}>
+            <planeGeometry args={[50, 50]} />
             <DiscoShaderMaterial />
-        </mesh> */}
+        </mesh>
+        <mesh rotation={[-2.0, 0, 0]} position={[0, 0, 5]}>
+            <planeGeometry args={[50, 50]} />
+            <DiscoShaderMaterial />
+        </mesh>
 
     </>
 }

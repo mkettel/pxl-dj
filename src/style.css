@@ -31,6 +31,7 @@ font-family: 'Britney', cursive;
     margin: 0px;
     font-size: 80px;
     font-family: 'Britney', cursive;
+    text-shadow: 0px 0px 10px rgb(244, 244, 244);
 }
 
 .right-container {
@@ -49,11 +50,13 @@ font-family: 'Britney', cursive;
 .right-container .header {
     font-size: 32px;
     margin: 0px;
+    text-shadow: 0px 0px 10px rgb(244, 244, 244);
 }
 .right-container .text {
     font-size: 24px;
     margin: 0px;
     margin-bottom: 2px;
+    text-shadow: 0px 0px 10px rgb(244, 244, 244);
 }
 
 .video {
