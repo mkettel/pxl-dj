@@ -79,7 +79,7 @@ export default function Experience()
         </Suspense>
 
         <mesh rotation={[1.7, 0, 0]} position={[0, 0, -5]}>
-            <sphereGeometry args={[50, 50]} />
+            <sphereGeometry args={[30, 30]} />
             <DiscoShaderMaterial />
         </mesh>
 
