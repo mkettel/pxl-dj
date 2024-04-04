@@ -12,7 +12,7 @@ export default function Experience()
     const controls = useRef()
     const meshFitCameraHome = useRef()
     const { size } = useThree()
-    const [args, setArgs] = useState([15, 2, 5])
+    const [args, setArgs] = useState([7, 2, 5])
     const isMobile = size.width <= 768;
     const [position, setPosition] = useState([0, 0, 0])
     const [cameraBoxSize, setCameraBoxSize] = useState(isMobile ? [3.7, 3, 4] : [7.2, 3, 3]) // sets the box to have the camera focus at
