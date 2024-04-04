@@ -60,8 +60,7 @@ export default function Experience()
         {/* <CameraControls ref={controls} minDistance={3.4} maxDistance={13} minPolarAngle={-5} maxPolarAngle={0.1} minAzimuthAngle={-0.05} maxAzimuthAngle={0.01} /> */}
         <CameraControls ref={controls} />
 
-        <directionalLight castShadow position={ [ 1, 4, 3 ] } intensity={ 4.5 } />
-        <ambientLight intensity={ 1 } />
+        <ambientLight intensity={ 2 } />
 
         <Environment preset="apartment" />
 
