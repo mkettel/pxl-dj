@@ -91,7 +91,7 @@ font-family: 'Britney', cursive;
     z-index: 100;
   }
   .modal-bucket {
-    min-width: 55vw;
+    min-width: 50vw;
     min-height: 60vh;
     max-width: 60vw;
     border: 1px solid white;
@@ -103,14 +103,24 @@ font-family: 'Britney', cursive;
   }
   .modal-bucket .title {
     color: black;
+    /* text-shadow: 0px 0px 10px rgb(148, 148, 148); */
     margin-bottom: 35px;
     font-family: 'Britney', cursive;
     display: flex;
-    justify-content: center;
+    justify-content: start;
   }
   .modal-bucket .title h1 {
     margin: 0px;
     font-size: 60px;
+    background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+    background-image: -webkit-linear-gradient(-40deg, transparent 0%, transparent 40%, #fff 50%, transparent 60%, transparent 100%);
+    background-size: 200px;
+    color: rgba(255, 255, 255, 0.3);
+    background-clip: text;
+    animation-name: shine;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
   }
   .modal-bucket .modal-field {
     display: flex;
@@ -119,6 +129,9 @@ font-family: 'Britney', cursive;
     margin-bottom: 40px;
     align-items: center;
     justify-content: space-between;
+  }
+  .modal-bucket .modal-field:last-child {
+    margin-bottom: 10px;
   }
   .modal-bucket .modal-field .marker {
     padding: 5px;
@@ -131,7 +144,7 @@ font-family: 'Britney', cursive;
     width: 100%;
   }
   .modal-bucket .modal-field .marker p {
-    font-size: 22px;
+    font-size: 18px;
     margin: 0px;
     padding: 2px;
     color: rgb(255, 99, 99);
@@ -146,7 +159,8 @@ font-family: 'Britney', cursive;
   .modal-bucket .modal-field input {
     /* background-color: rgb(43, 43, 43); */
     background-color: transparent;
-    color: black;
+    /* color: black; */
+    color: rgb(187, 187, 187);
     border: none;
     padding: 10px 10px 5px 10px;
     /* border-radius: 5px; */
@@ -154,18 +168,53 @@ font-family: 'Britney', cursive;
     font-size: 24px;
     text-transform: uppercase;
     font-family: 'Britney', cursive;
-    border-bottom: 2px solid white;
-    border-bottom: 2px solid rgb(0, 0, 0);
-    border-right: 2px solid white;
-    border-right: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(187, 187, 187);
+    /* border-bottom: 2px solid rgb(0, 0, 0); */
+    border-right: 2px solid rgb(187, 187, 187);
+    /* border-right: 2px solid rgb(0, 0, 0); */
     border-bottom-right-radius: 30px;
   }
   .modal-bucket .modal-field input::placeholder {
     color: rgb(156, 156, 156);
     color: black;
+    color: rgb(187, 187, 187)
   }
   .modal-bucket .modal-field input:focus {
     outline: none;
+  }
+  .modal-bucket .submit {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 25px;
+    cursor: pointer;
+  }
+  .modal-bucket .submit .submit-text {
+    text-transform: uppercase;
+    font-size: 32px;
+    font-family: 'britney', cursive;
+    color: rgb(187, 187, 187);
+    text-shadow: 0px 0px 10px rgb(187, 187, 187);
+  }
+  .modal-bucket .submit .submit-text:hover {
+    color: rgb(248, 248, 248);
+    text-shadow: 0px 0px 10px rgb(244, 244, 244);
+    
+  }
+
+
+  @keyframes shine {
+    0%, 10% {
+      background-position: -1000px;
+    }
+    20% {
+      background-position: top left;
+    }
+    90% {
+      background-position: top right;
+    }
+    100% {
+      background-position: 1000px;
+    }
   }
 
 

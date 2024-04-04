@@ -1,11 +1,15 @@
 import { motion, AnimatePresence } from "framer-motion";
 import PlayerContext from './PlayerContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 
 export default function Rsvp() { 
 
     const { isModalOpen, toggleModal, setIsModalOpen } = useContext(PlayerContext);
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [buddies, setBuddies] = useState('');
+    const [songRequest, setSongRequest] = useState('');
 
     const modalVariants = {
         visible: {
@@ -42,6 +46,38 @@ export default function Rsvp() {
         }
     };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch('https://formspree.io/f/xjvnaqjo', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    firstName,
+                    lastName,
+                    buddies,
+                    songRequest
+                })
+            });
+
+            if (response.ok) {
+                console.log('Form submitted successfully');
+                // Reset form fields
+                setFirstName('');
+                setLastName('');
+                setBuddies('');
+                setSongRequest('');
+            } else {
+                console.error('Form submission failed');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+        }
+    };
+
     return (
         <>
             <AnimatePresence>
@@ -65,7 +101,7 @@ export default function Rsvp() {
                                     <p>First Name</p>
                                 </div>
                                 <div className="input">
-                                    <input type="text" placeholder="Renni" />
+                                    <input type="text" placeholder="Renni" value={firstName} onChange={(e) => setFirstName(e.target.value)}  />
                                 </div>
                             </div>
                             <div className="modal-field">
@@ -73,7 +109,7 @@ export default function Rsvp() {
                                     <p>Last Name</p>
                                 </div>
                                 <div className="input">
-                                    <input type="text" placeholder="Meehow" />
+                                    <input type="text" placeholder="Meehow" value={lastName} onChange={(e) => setLastName(e.target.value)}  />
                                 </div>
                             </div>
                             <div className="modal-field">
@@ -81,7 +117,7 @@ export default function Rsvp() {
                                     <p>Buddies</p>
                                 </div>
                                 <div className="input">
-                                    <input type="number" placeholder="1" />
+                                    <input type="number" placeholder="1" value={buddies} onChange={(e) => setBuddies(e.target.value)} />
                                 </div>
                             </div>
                             <div className="modal-field">
@@ -89,12 +125,12 @@ export default function Rsvp() {
                                     <p>Song Request</p>
                                 </div>
                                 <div className="input">
-                                    <input type="text" placeholder="Dabeull" />
+                                    <input type="text" placeholder="Dabeull" value={songRequest} onChange={(e) => setSongRequest(e.target.value)} />
                                 </div>
                             </div>
                         </div>
                         <div className="submit">
-                            <p className="submit-text">Submit</p>
+                            <p className="submit-text" onClick={handleSubmit} >Submit</p>
                         </div>
                     </div>
                 </motion.div>
