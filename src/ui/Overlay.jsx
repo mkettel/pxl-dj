@@ -29,9 +29,9 @@ export default function Overlay() {
     const vidArray = ['DAXhz9YkbWY', '2e8x3fFZP3Q']
 
     useEffect(() => {
-      if (player && currentIndex < vidArray.length) { // Add this condition
+      if (player) { // Add this condition
         if (isPlaying) {
-          player.loadVideoById(vidArray[currentIndex]); // Load the video at the current index
+          player.playVideo(); // Load the video at the current index
         } else {
           player.pauseVideo();
         }
