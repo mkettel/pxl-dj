@@ -5,6 +5,8 @@ import PlayerContext from '../PlayerContext';
 export default function Overlay() {
     const { isPlaying, setPlayingState } = useContext(PlayerContext);
     const [player, setPlayer] = useState(null);
+    const [currentIndex, setCurrentIndex] = useState(0); // Add this line
+
 
     const handlePlayerReady = (event) => {
         setPlayer(event.target);
@@ -12,25 +14,30 @@ export default function Overlay() {
     };
 
     const handleStateChange = (event) => {
-        if (event.data === YT.PlayerState.PLAYING) {
-          setPlayingState(true);
-        } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
-          setPlayingState(false);
+      if (event.data === YT.PlayerState.PLAYING) {
+        setPlayingState(true);
+      } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+        setPlayingState(false);
+        if (event.data === YT.PlayerState.ENDED) { // Add this condition
+          setCurrentIndex((prevIndex) => prevIndex + 1); // Increment the index when the video ends
         }
-      };
+      }
+    };
 
     const VIDEO_ID = '2e8x3fFZP3Q';
+    const vidArray = ['DAXhz9YkbWY', '2e8x3fFZP3Q']
 
     useEffect(() => {
-        if (player) {
-          if (isPlaying) {
-            player.playVideo();
-          } else {
-            player.pauseVideo();
-          }
+      if (player && currentIndex < vidArray.length) { // Add this condition
+        if (isPlaying) {
+          player.loadVideoById(vidArray[currentIndex]); // Load the video at the current index
+        } else {
+          player.pauseVideo();
         }
-        console.log('playing state overlay', isPlaying);
-      }, [player, isPlaying]);
+      }
+      // console.log('playing state overlay', isPlaying);
+      console.log('current index', currentIndex);
+    }, [player, isPlaying, currentIndex, vidArray]);
 
     return (
         <>
@@ -51,7 +58,7 @@ export default function Overlay() {
 
               <YouTube
                 id='player'
-                videoId="2e8x3fFZP3Q"
+                videoId={vidArray[currentIndex]}
                 onReady={handlePlayerReady}
                 onStateChange={handleStateChange}
                 onPlay={() => console.log('Playing')}

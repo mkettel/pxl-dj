@@ -2,10 +2,11 @@ import { OrbitControls, Environment, CameraControls, useProgress } from '@react-
 import { Perf } from 'r3f-perf'
 import { Turntable } from './models/Turntable'
 import { useRef, useEffect, useState, Suspense, useMemo } from 'react'
-import { useThree } from '@react-three/fiber'
+import { useThree, useFrame } from '@react-three/fiber'
 import Block from './Block'
 import { CompressedTurn } from './models/CompressedTurn'
 import DiscoShaderMaterial from './BGShader'
+import { easing } from 'maath'
 
 export default function Experience()
 {
@@ -58,8 +59,8 @@ export default function Experience()
         {/* <Perf position="top-left" /> */}
 
         {/* <OrbitControls makeDefault /> */}
-        <CameraControls ref={controls} minDistance={3.4} maxDistance={13} minPolarAngle={-5} maxPolarAngle={0.1} minAzimuthAngle={-0.05} maxAzimuthAngle={0.01} />
-        {/* <CameraControls ref={controls} /> */}
+        {/* <CameraControls ref={controls} minDistance={3.4} maxDistance={13} minPolarAngle={-5} maxPolarAngle={0.1} minAzimuthAngle={-0.05} maxAzimuthAngle={0.01} /> */}
+        <CameraControls ref={controls} />
 
         <ambientLight intensity={ 2 } />
 
@@ -84,3 +85,5 @@ export default function Experience()
 
     </>
 }
+
+

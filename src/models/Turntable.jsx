@@ -54,7 +54,7 @@ export function Turntable(props) {
 
   const playButtonMaterial = new THREE.MeshStandardMaterial({
     color: 'black',
-    emissive: 'white',
+    emissive: 'black',
     // Add any other material properties you want
   });
   
@@ -494,36 +494,37 @@ export function Turntable(props) {
           // PLAY / PAUSE BUTTON --------------------------------------------------------------------------------------------------------------------
           geometry={nodes.Cylinder023.geometry}
           // geometry={new THREE.SphereGeometry(0.05, 10, 10)}
-          material={materials.Main}
+          material={playButtonMaterial}
           onClick={handleButtonClick}
           onTouchStart={handleModalClick} // for mobile
           onPointerOver={playButtonHover}
           onPointerOut={playButtonHoverEnd}
-          position={[0, isButtonPressed ? -0.15 : 0, 0]}
+          position={[0, isButtonPressed ? -0.30 : 0, 0]}
         />
         <mesh
           geometry={nodes.Cylinder023_1.geometry}
           material={materials.Black}
-          position={[0, isButtonPressed ? -0.12 : 0, 0]}
+          position={[0, isButtonPressed ? -0.30 : 0, 0]}
         />
       </group>
+      {/* 3D TEXT FOR TOUCH ME */}
       <Text3D 
         font="/bold.blob" 
-        scale={[.06, .06, .1]}
-        position={[0.24, 0.108, 1.113]}
+        scale={[.05, .05, .1]}
+        position={[0.66, isButtonPressed ? 0.09 : 0.118, 0.99]}
         rotation={[-Math.PI / 2, 0, 0]}
         >
-          TOUCH
-          <meshStandardMaterial color="purple" />
+          TAP
+          <meshStandardMaterial color="red" emissive={"blue"} emissiveIntensity={2} />
         </Text3D>
       <Text3D 
         font="/bold.blob" 
-        scale={[.06, .06, .1]}
-        position={[0.31, 0.108, 1.183]}
+        scale={[.05, .05, .1]}
+        position={[0.64, isButtonPressed ? 0.09 : 0.118, 1.05]}
         rotation={[-Math.PI / 2, 0, 0]}
         >
-          PLAY
-          <meshStandardMaterial color="purple" />
+          HERE
+          <meshStandardMaterial color="red" emissive={"blue"} emissiveIntensity={2} />
         </Text3D>
       <group position={[0.726, 0.108, 0.741]} scale={[1.457, 0.092, 1.457]}>
         <mesh
