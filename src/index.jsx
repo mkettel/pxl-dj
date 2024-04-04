@@ -14,7 +14,7 @@ root.render(
     <>
         <PlayerProvider>
             <Canvas
-             camera={{ position: [0, 0, 15], fov: 70 }}
+             camera={{ position: [0, 0, 10], fov: 70 }}
             >
                 <Experience />
             </Canvas>
