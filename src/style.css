@@ -260,9 +260,9 @@ font-family: 'Britney', cursive;
 
     /* RSVP MODAL */
     .modal-bucket {
-        padding: 30px;
+        padding: 30px 30px 40px 30px;
         min-width: 65vw;
-        max-height: 80vh;
+        max-height: 75vh;
         overflow: scroll;
     }
     .modal-bucket .title {
@@ -285,10 +285,19 @@ font-family: 'Britney', cursive;
         margin-bottom: 0px;
     }
     .modal-bucket .modal-field .marker p {
-        font-size: 14px;
+        font-size: 12px;
+    }
+    .modal-bucket .modal-field input {
+        width: 100%;
+        color: rgb(255, 255, 255);
+        font-size: 20px;
     }
     .modal-bucket .modal-field .input {
-        width: 100%;
+        min-width: 90%;
+    }
+    .modal-bucket .modal-field input::placeholder {
+      color: rgb(213, 213, 213);
+      font-size: 22px;
     }
     .modal-bucket .submit {
         margin-right: 10px;
