@@ -160,27 +160,20 @@ font-family: 'Britney', cursive;
     min-width: 50%;
   }
   .modal-bucket .modal-field input {
-    /* background-color: rgb(43, 43, 43); */
     background-color: transparent;
-    /* color: black; */
     color: rgb(187, 187, 187);
     border: none;
     padding: 10px 10px 5px 10px;
-    /* border-radius: 5px; */
     width: 90%;
     font-size: 24px;
     text-transform: uppercase;
     font-family: 'Britney', cursive;
     border-bottom: 2px solid rgb(187, 187, 187);
-    /* border-bottom: 2px solid rgb(0, 0, 0); */
     border-right: 2px solid rgb(187, 187, 187);
-    /* border-right: 2px solid rgb(0, 0, 0); */
     border-bottom-right-radius: 30px;
   }
   .modal-bucket .modal-field input::placeholder {
-    color: rgb(156, 156, 156);
-    color: black;
-    color: rgb(187, 187, 187)
+    color: rgb(120, 120, 120)
   }
   .modal-bucket .modal-field input:focus {
     outline: none;
@@ -201,7 +194,26 @@ font-family: 'Britney', cursive;
   .modal-bucket .submit .submit-text:hover {
     color: rgb(248, 248, 248);
     text-shadow: 0px 0px 10px rgb(244, 244, 244);
-    
+  }
+
+  .alert {
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: medium;
+    font-family: 'Britney', cursive;
+    font-size: 22px;
+    /* text-align: center; */
+  }
+
+  .alert.success {
+      background-color: #4caf50;
+      color: white;
+  }
+
+  .alert.error {
+      background-color: #f44336;
+      color: white;
   }
 
 
@@ -257,7 +269,7 @@ font-family: 'Britney', cursive;
         margin-bottom: 20px;
     }
     .modal-bucket .title h1 {
-        font-size: 32px;
+        font-size: 36px;
       }
 
     .modal-bucket .field-container {
@@ -266,14 +278,23 @@ font-family: 'Britney', cursive;
     }
     .modal-bucket .modal-field {
       flex-direction: column;
-      gap: 15px;
+      gap: 0px;
       align-items: flex-start;
+    }
+    .modal-bucket .modal-field:last-child {
+        margin-bottom: 0px;
     }
     .modal-bucket .modal-field .marker p {
         font-size: 14px;
     }
     .modal-bucket .modal-field .input {
         width: 100%;
+    }
+    .modal-bucket .submit {
+        margin-right: 10px;
+    }
+    .modal-bucket .submit .submit-text {
+        font-size: 24px;
     }
     
 }

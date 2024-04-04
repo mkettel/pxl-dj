@@ -7,11 +7,11 @@ export default function Suspense({ args, setArgs }) {
     return (
         <>
             <group position={[0, 0, 0]}>
-                <Text color="red" fontSize={1.0} position={[0, 0, 0]} children="Loading Party..." strokeWidth={2} />
+                <Text color="white" fontSize={1.0} position={[0, 0, 0]} children="Loading Party..." />
 
                 <mesh position={[0, -2, 0]}>
                     <boxGeometry args={args} />
-                    <meshStandardMaterial color="hotpink" wireframe />
+                    <meshStandardMaterial color="white" wireframe />
                 </mesh>
             </group>
         </>

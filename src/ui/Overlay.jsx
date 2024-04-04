@@ -49,7 +49,7 @@ export default function Overlay() {
             </div>
             <div className="video">
 
-            <YouTube
+              <YouTube
                 id='player'
                 videoId="2e8x3fFZP3Q"
                 onReady={handlePlayerReady}
@@ -70,6 +70,7 @@ export default function Overlay() {
                 
                 />
             </div>
+
         </>
     );
 }

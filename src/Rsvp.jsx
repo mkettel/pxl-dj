@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import PlayerContext from './PlayerContext';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 
 
 export default function Rsvp() { 
@@ -10,6 +10,7 @@ export default function Rsvp() {
     const [lastName, setLastName] = useState('');
     const [buddies, setBuddies] = useState('');
     const [songRequest, setSongRequest] = useState('');
+    const [submissionStatus, setSubmissionStatus] = useState(null);
 
     const modalVariants = {
         visible: {
@@ -65,6 +66,7 @@ export default function Rsvp() {
 
             if (response.ok) {
                 console.log('Form submitted successfully');
+                setSubmissionStatus('success');
                 // Reset form fields
                 setFirstName('');
                 setLastName('');
@@ -72,11 +74,21 @@ export default function Rsvp() {
                 setSongRequest('');
             } else {
                 console.error('Form submission failed');
+                setSubmissionStatus('error');
             }
         } catch (error) {
             console.error('Error submitting form:', error);
         }
     };
+
+    // useEffect to update the submission status so that the alert can be displayed
+    useEffect(() => {
+        if (submissionStatus) {
+            setTimeout(() => {
+                setSubmissionStatus(null);
+            }, 5000);
+        }
+    }, [submissionStatus]);      
 
     return (
         <>
@@ -90,8 +102,9 @@ export default function Rsvp() {
                     id="backdrop"
                     onClick={handleCloseModal}
                     style={{ borderRadius: isModalOpen ? "0px" : "25px" }} 
+                    layout
                 >
-                    <div className="modal-bucket">
+                    <motion.div layout className="modal-bucket">
                         <div className="title">
                             <h1>RSVP</h1>
                         </div>
@@ -101,7 +114,7 @@ export default function Rsvp() {
                                     <p>First Name</p>
                                 </div>
                                 <div className="input">
-                                    <input type="text" placeholder="Renni" value={firstName} onChange={(e) => setFirstName(e.target.value)}  />
+                                    <input type="text" placeholder="Ren" value={firstName} onChange={(e) => setFirstName(e.target.value)}  />
                                 </div>
                             </div>
                             <div className="modal-field">
@@ -109,7 +122,7 @@ export default function Rsvp() {
                                     <p>Last Name</p>
                                 </div>
                                 <div className="input">
-                                    <input type="text" placeholder="Meehow" value={lastName} onChange={(e) => setLastName(e.target.value)}  />
+                                    <input type="text" placeholder="Renni" value={lastName} onChange={(e) => setLastName(e.target.value)}  />
                                 </div>
                             </div>
                             <div className="modal-field">
@@ -132,7 +145,18 @@ export default function Rsvp() {
                         <div className="submit">
                             <p className="submit-text" onClick={handleSubmit} >Submit</p>
                         </div>
-                    </div>
+                        {/* Submission Alert */}
+                        {submissionStatus === 'success' && (
+                            <motion.div className="alert success">
+                                Thank you for your RSVP! We look forward to seeing you at the event.
+                            </motion.div>
+                        )}
+                        {submissionStatus === 'error' && (
+                            <motion.div layout className="alert error">
+                                Oops! Something went wrong. Please try submitting the form again.
+                            </motion.div>
+                        )}
+                    </motion.div>
                 </motion.div>
             </AnimatePresence>
         
