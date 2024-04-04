@@ -15,7 +15,7 @@ export default function Experience()
     const [args, setArgs] = useState([15, 2, 5])
     const isMobile = size.width <= 768;
     const [position, setPosition] = useState([0, 0, 0])
-    const [cameraBoxSize, setCameraBoxSize] = useState(isMobile ? [3.5, 3, 4] : [7.2, 3, 3]) // sets the box to have the camera focus at
+    const [cameraBoxSize, setCameraBoxSize] = useState(isMobile ? [3.7, 3, 4] : [7.2, 3, 3]) // sets the box to have the camera focus at
     const [cameraBoxPosition, setCameraBoxPosition] = useState(isMobile ? [2.5, .5, 1.4] : [0, 0, 0]) // sets the box to have the camera focus at
     const { progress } = useProgress()
 
@@ -45,9 +45,9 @@ export default function Experience()
     useEffect(() => {
         // Update the position based on the screen size
         // const isMobile = size.width <= 768;
-        setPosition(isMobile ? [0, 0, 2.3] : [0, 0, 0]);
+        setPosition(isMobile ? [0, 0, 2.7] : [0, 0, 0]);
         setArgs(isMobile ? [7, 2, 5] : [15, 2, 5]);
-        setCameraBoxSize(isMobile ? [3.5, 3, 4] : [7.2, 3, 3]);
+        setCameraBoxSize(isMobile ? [3.7, 3, 4] : [7.2, 3, 3]);
         setCameraBoxPosition(isMobile ? [2.5, .5, 1.4] : [0, 0.5, 0]);
       }, [size, isMobile, setPosition, setArgs, setCameraBoxSize, setCameraBoxPosition]);  
 
