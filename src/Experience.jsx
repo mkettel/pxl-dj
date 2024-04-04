@@ -21,7 +21,7 @@ export default function Experience()
 
     const intro = async () => {
         controls.current.rotate(0.6, -1, true)
-        controls.current.dolly(-10)
+        controls.current.dolly(-15)
         controls.current.smoothTime = 1.6;
         fitCameraHome();
         console.log(controls.current);
