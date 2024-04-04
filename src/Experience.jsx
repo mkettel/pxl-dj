@@ -18,6 +18,7 @@ export default function Experience()
     const cameraBoxSize = useMemo(() => (isMobile ? [3.7, 3, 4] : [7.2, 3, 3]), [isMobile]);
     const cameraBoxPosition = useMemo(() => (isMobile ? [2.5, 0.5, 1.4] : [0, 0.5, 0]), [isMobile]);
     const { progress } = useProgress()
+    
 
     const intro = async () => {
         controls.current.rotate(0.6, -1, true)
