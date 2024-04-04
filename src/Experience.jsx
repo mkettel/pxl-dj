@@ -74,10 +74,10 @@ export default function Experience()
             {/* <CompressedTurn position={position} scale={1.7} rotation={[0, 0, 0]} /> */}
         </Suspense>
 
-        <mesh rotation={[2.0, 0, 0]} position={[0, 0, -8]}>
+        {/* <mesh rotation={[2.0, 0, 0]} position={[0, 0, -8]}>
             <planeGeometry args={[100, 100]} />
             <DiscoShaderMaterial />
-        </mesh>
+        </mesh> */}
 
     </>
 }

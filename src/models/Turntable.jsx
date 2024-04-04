@@ -51,6 +51,13 @@ export function Turntable(props) {
         // console.log(`No longer hovering over ${partName} ${material}`)
     }
 
+  const playButtonMaterial = new THREE.MeshStandardMaterial({
+    color: 'black',
+    emissive: 'white',
+    // Add any other material properties you want
+  });
+  
+
   //get all materials
     const allMaterials = Object.values(materials)
     allMaterials.forEach((material) => {
@@ -66,12 +73,7 @@ export function Turntable(props) {
             material.emissiveIntensity = 1.5
         }
     })
-
-     //   clone the material for the play button
-     const playButtonMaterial = materials.Main.clone()
-     playButtonMaterial.name = 'Play Button'
-     console.log('play button', playButtonMaterial);
-     
+    
 
     // play Button hover cursor
     const playButtonHover = (e) => {
@@ -98,7 +100,7 @@ export function Turntable(props) {
    
 
   return (
-    <group {...props} dispose={null} onClick={handleModalClick}>
+    <group {...props} dispose={null} >
       <mesh
         ref={spinnyRight}
         castShadow
@@ -108,10 +110,13 @@ export function Turntable(props) {
         position={[1.407, 0.099, -0.093]}
         onPointerOver={(e) => turntableHover(e, 'spinnyRight')}
         onPointerOut={(e) => turntableHoverEnd(e, 'spinnyRight')}
+        onClick={handleModalClick}
       >
             <Sticker url="/images/rsvp.png" position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 1]} scale={0.55} onClick={handleModalClick} />
-            <Sticker url="/images/rs-hat.png" position={[0.42, 0, -0.1]} rotation={[Math.PI / 2, 0, -2]} scale={0.27} onClick={handleModalClick} />
-            <Sticker url="/images/kiss-lips.png" position={[0, 0, 0.43]} rotation={[Math.PI / 2, 0, 2.2]} scale={0.29} />
+            <Sticker url="/images/bday.png" position={[0.32, 0, -0.20]} rotation={[Math.PI / 2, 0, -2]} scale={[.5, .10, 1]} onClick={handleModalClick} />
+            <Sticker url="/images/lips-trans.png" position={[0.08, 0, 0.43]} rotation={[Math.PI / 2, 0, 2.2]} scale={[.22, .20, 1]} />
+            <Sticker url="/images/wangs-trans.png" position={[0.04, 0.2, -0.43]} rotation={[Math.PI / 2, 0, -2.5]} scale={[.23, .25, 1]} />
+            <Sticker url="/images/bolt-trans.png" position={[0.33, 0.2, 0.23]} rotation={[Math.PI / 2, 0, -2.5]} scale={[.23, .25, 1]} />
       </mesh>
       <mesh
         ref={spinnyLeft}
@@ -122,10 +127,10 @@ export function Turntable(props) {
         position={[-1.4, 0.137, -0.093]}
         onPointerOver={(e) => turntableHover(e, 'spinnyRight')}
         onPointerOut={(e) => turntableHoverEnd(e, 'spinnyRight')}
+        onClick={handleModalClick}
       >
-        <Sticker url="/images/bonjor.png" position={[0.42, 0, 0]} rotation={[Math.PI / 2, 0, 1.5]} scale={0.22} />
+        <Sticker url="/images/Bonjour.png" position={[0.42, 0, 0]} rotation={[Math.PI / 2, 0, 1.5]} scale={0.22} />
         <Sticker url="/images/rsvp.png" position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 0]} scale={0.55} onClick={handleModalClick} />
-        {/* <Sticker url="/images/kiss-lips.png" position={[0, 0, 0.43]} rotation={[Math.PI / 2, 0, 2.2]} scale={0.23} /> */}
       </mesh>
       <group
         position={[-1.317, -0.134, -1.3]}
