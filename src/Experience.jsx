@@ -1,4 +1,4 @@
-import { OrbitControls, Environment, CameraControls, Backdrop } from '@react-three/drei'
+import { OrbitControls, Environment, CameraControls, useProgress } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import { Turntable } from './models/Turntable'
 import { useRef, useEffect, useState, Suspense } from 'react'
@@ -17,6 +17,7 @@ export default function Experience()
     const [position, setPosition] = useState([0, 0, 0])
     const [cameraBoxSize, setCameraBoxSize] = useState(isMobile ? [3.5, 3, 4] : [7.2, 3, 3]) // sets the box to have the camera focus at
     const [cameraBoxPosition, setCameraBoxPosition] = useState(isMobile ? [2.5, .5, 1.4] : [0, 0, 0]) // sets the box to have the camera focus at
+    const { progress } = useProgress()
 
     const intro = async () => {
         controls.current.rotate(0.6, -1, true)
@@ -31,8 +32,10 @@ export default function Experience()
     }
 
     useEffect(() => {
-        intro();
-    }, [])
+        if (progress === 100) {
+            intro();
+        }
+    }, [progress])
 
     useEffect(() => {
         window.addEventListener('resize', fitCameraHome)

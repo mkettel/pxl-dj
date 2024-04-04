@@ -16,6 +16,7 @@ export function Turntable(props) {
     const { togglePlay } = useContext(PlayerContext); // this will give you access to the togglePlay function
     const [isButtonPressed, setIsButtonPressed] = useState(false);
     const { toggleModal } = useContext(PlayerContext); // this will give you access to the toggleModal function
+    
 
     // Get textures
     const texture = useTexture('/images/bonjor.png')
