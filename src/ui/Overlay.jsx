@@ -48,12 +48,16 @@ export default function Overlay() {
     
     const titleVariants = {
       hidden: { y: 0, opacity: 0 },
-      visible: { y: 0, opacity: 1, transition: { duration: 1.5, delay: 0.4 } },
+      visible: { y: 0, opacity: 1, transition: { duration: 1.5, delay: 0.6 } },
     };
     
     const dataVariants = {
       hidden: { x: 0, opacity: 0 },
-      visible: { x: 0, opacity: 1, transition: { duration: 1.5, delay: 0.6 } },
+      visible: { x: 0, opacity: 1, transition: { duration: 1.5, delay: 1.0 } } ,
+    };
+    const dataVariants2 = {
+      hidden: { x: 0, opacity: 0 },
+      visible: { x: 0, opacity: 1, transition: { duration: 1.5, delay: 1.4 } } ,
     };
 
     return (
@@ -76,7 +80,7 @@ export default function Overlay() {
                     <motion.h2 className="header">WHEN:</motion.h2>
                     <motion.p className="text">April 26th, 2024</motion.p>
                 </motion.div>
-                <motion.div className="data" variants={dataVariants}>
+                <motion.div className="data" variants={dataVariants2}>
                     <motion.h2 className="header" >WHERE:</motion.h2 >
                     <motion.p className="text">160 W 75th St. Apt, 2B</motion.p>
                 </motion.div>
