@@ -114,7 +114,7 @@ export default function Rsvp() {
                                     <p>First Name</p>
                                 </div>
                                 <div className="input">
-                                    <input type="text" placeholder="Ren" value={firstName} onChange={(e) => setFirstName(e.target.value)}  />
+                                    <input type="text" placeholder="" value={firstName} onChange={(e) => setFirstName(e.target.value)}  />
                                 </div>
                             </div>
                             <div className="modal-field">
@@ -122,7 +122,7 @@ export default function Rsvp() {
                                     <p>Last Name</p>
                                 </div>
                                 <div className="input">
-                                    <input type="text" placeholder="Renni" value={lastName} onChange={(e) => setLastName(e.target.value)}  />
+                                    <input type="text" placeholder="" value={lastName} onChange={(e) => setLastName(e.target.value)}  />
                                 </div>
                             </div>
                             <div className="modal-field">
@@ -130,7 +130,7 @@ export default function Rsvp() {
                                     <p>Buddies</p>
                                 </div>
                                 <div className="input">
-                                    <input type="number" placeholder="1" value={buddies} onChange={(e) => setBuddies(e.target.value)} />
+                                    <input type="number" placeholder="" value={buddies} onChange={(e) => setBuddies(e.target.value)} />
                                 </div>
                             </div>
                             <div className="modal-field">
@@ -138,7 +138,7 @@ export default function Rsvp() {
                                     <p>Song Request</p>
                                 </div>
                                 <div className="input">
-                                    <input type="text" placeholder="Dabeull" value={songRequest} onChange={(e) => setSongRequest(e.target.value)} />
+                                    <input type="text" placeholder="" value={songRequest} onChange={(e) => setSongRequest(e.target.value)} />
                                 </div>
                             </div>
                         </div>
