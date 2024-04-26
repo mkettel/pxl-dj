@@ -15,7 +15,7 @@ export default function Experience()
     const { size } = useThree()
     const isMobile = size.width <= 768;
     const args = useMemo(() => (isMobile ? [7, 2, 5] : [15, 2, 5]), [isMobile]);
-    const position = useMemo(() => (isMobile ? [-2.3, -0.0, 3.8] : [0, 0.4, 4.4]), [isMobile]);
+    const position = useMemo(() => (isMobile ? [-2.3, -0.6, 3.8] : [0, 0.4, 4.4]), [isMobile]);
     const rotation = useMemo(() => (isMobile ? [1.0, 0.0, 0.0] : [0.9, 0, 0]), [isMobile]);
     const cameraBoxSize = useMemo(() => (isMobile ? [3.7, 3, 4] : [7.2, 3, 3]), [isMobile]);
     const cameraBoxPosition = useMemo(() => (isMobile ? [2.5, 0.5, 1.4] : [0, 0.5, 0]), [isMobile]);
