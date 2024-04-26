@@ -112,7 +112,7 @@ function MobileRig(props) {
     const ref = useRef()
     useFrame((state, delta) => {
       state.events.update() // Raycasts every frame rather than on pointer-move
-      easing.damp3(state.camera.position, [-state.pointer.x * 0.1, state.pointer.y + 0.0, 10], 0.3, delta) // Move camera
+      easing.damp3(state.camera.position, [-state.pointer.x * 0.1, state.pointer.y * 0.2, 10], 0.3, delta) // Move camera
       state.camera.lookAt(0, 0, 0) // Look at center
     })
     return <group ref={ref} {...props} />

@@ -26,13 +26,13 @@ export default function Rsvp() {
             }
         },
         hidden: {
-            opacity: 0,
+            opacity: 0.0,
             scale: 1,
-            x: -2000,
+            x: -1500,
             y: 0,
             transition: { // spring
                 type: 'spring',
-                stiffness: 160,
+                stiffness: 100,
                 damping: 20,
                 mass: 0.5,
             }
