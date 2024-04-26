@@ -26,6 +26,7 @@ font-family: 'Britney', cursive;
     top: 15px;
     left: 40px;
     color: white;
+    pointer-events: none;
 }
 .main-container .title {
     margin: 0px;
@@ -40,6 +41,7 @@ font-family: 'Britney', cursive;
     right: 50px;
     color: white;
     font-family: 'Britney', cursive;
+    pointer-events: none;
 }
 .right-container .data {
     display: flex;
