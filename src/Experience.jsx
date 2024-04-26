@@ -75,20 +75,21 @@ export default function Experience()
             <meshStandardMaterial color="hotpink" transparent opacity={0.0} />
         </mesh>
 
-        {/* {isMobile ? (
+        {isMobile ? (
             <>
-                <CameraControls ref={controls} minDistance={3.4} maxDistance={13} minPolarAngle={-5} maxPolarAngle={0.1} minAzimuthAngle={-0.05} maxAzimuthAngle={0.01} />
+            <MobileRig>
                 <Suspense fallback={<Block args={args} />}>
                     <Turntable position={position} scale={1.7} rotation={rotation} />
                 </Suspense>
+            </MobileRig>
             </>
             ) : (
-                )} */}
             <Rig>
                 <Suspense fallback={<Block args={args} />}>
-                <Turntable position={position} scale={1.7} rotation={rotation} />
+                    <Turntable position={position} scale={1.7} rotation={rotation} />
                 </Suspense>
             </Rig>
+                )}
 
         <mesh rotation={[1.7, 0, 0]} position={[0, 0, -5]}>
             <sphereGeometry args={[30, 30]} />
@@ -103,6 +104,15 @@ function Rig(props) {
     useFrame((state, delta) => {
       state.events.update() // Raycasts every frame rather than on pointer-move
       easing.damp3(state.camera.position, [-state.pointer.x * 0.7, state.pointer.y + 1.5, 10], 0.3, delta) // Move camera
+      state.camera.lookAt(0, 0, 0) // Look at center
+    })
+    return <group ref={ref} {...props} />
+  }
+function MobileRig(props) {
+    const ref = useRef()
+    useFrame((state, delta) => {
+      state.events.update() // Raycasts every frame rather than on pointer-move
+      easing.damp3(state.camera.position, [-state.pointer.x * 0.1, state.pointer.y + 0.0, 10], 0.3, delta) // Move camera
       state.camera.lookAt(0, 0, 0) // Look at center
     })
     return <group ref={ref} {...props} />
