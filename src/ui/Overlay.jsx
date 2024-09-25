@@ -82,7 +82,7 @@ export default function Overlay() {
                 </motion.div>
                 <motion.div className="data" variants={dataVariants2}>
                     <motion.h2 className="header" >WHERE:</motion.h2 >
-                    <motion.p className="text">160 W 75th St. Apt, 2B</motion.p>
+                    <motion.p className="text">TBD</motion.p>
                 </motion.div>
             </motion.div>
             <div className="video">

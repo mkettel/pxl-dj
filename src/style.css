@@ -59,6 +59,7 @@ font-family: 'Britney', cursive;
     margin: 0px;
     margin-bottom: 2px;
     text-shadow: 0px 0px 10px rgb(244, 244, 244);
+    filter: blur(7px);
 }
 
 .video {
