@@ -68,7 +68,7 @@ export default function Overlay() {
               initial="hidden"
               animate="visible"
               >
-                <motion.h1 className="title" variants={titleVariants} >DJ REN</motion.h1>
+                <motion.h1 className="title" variants={titleVariants} >Pioneer DJ | PXL</motion.h1>
             </motion.div>
             <motion.div 
             className="right-container"
@@ -85,6 +85,14 @@ export default function Overlay() {
                     <motion.p className="text">TBD</motion.p>
                 </motion.div>
             </motion.div>
+
+            <motion.div className="credit" variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            > 
+              <motion.p className="credit">Credit to Timmy for the 3D model of the turntable</motion.p>
+            </motion.div>
+
             <div className="video">
 
               <YouTube

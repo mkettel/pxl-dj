@@ -96,7 +96,8 @@ export function Turntable(props) {
       };
 
     const handleModalClick = () => {
-        toggleModal();
+        // toggleModal();
+        console.log('turntable spinner clicked');
     }
    
 
@@ -111,9 +112,9 @@ export function Turntable(props) {
         onPointerOut={(e) => turntableHoverEnd(e, 'spinnyRight')}
         onClick={handleModalClick}
       >
-            <Sticker url="/images/rsvp.png" position={[0, 0.2, 0.0]} rotation={[Math.PI / 2, 0, 1]} scale={0.55} onClick={handleModalClick} />
-            <Sticker url="/images/bday.png" position={[0.32, 0.0, -0.20]} rotation={[Math.PI / 2, 0, -2]} scale={[.5, .10, 1]} onClick={handleModalClick} />
-            <Sticker url="/images/lips-trans.png" position={[0.08, 0.0, 0.43]} rotation={[Math.PI / 2, 0, 2.2]} scale={[.25, .20, 1]} />
+            {/* <Sticker url="/images/rsvp.png" position={[0, 0.2, 0.0]} rotation={[Math.PI / 2, 0, 1]} scale={0.55} onClick={handleModalClick} /> */}
+            {/* <Sticker url="/images/bday.png" position={[0.32, 0.0, -0.20]} rotation={[Math.PI / 2, 0, -2]} scale={[.5, .10, 1]} onClick={handleModalClick} /> */}
+            {/* <Sticker url="/images/lips-trans.png" position={[0.08, 0.0, 0.43]} rotation={[Math.PI / 2, 0, 2.2]} scale={[.25, .20, 1]} /> */}
       </mesh>
       <mesh
         ref={spinnyLeft}
@@ -124,8 +125,8 @@ export function Turntable(props) {
         onPointerOut={(e) => turntableHoverEnd(e, 'spinnyRight')}
         onClick={handleModalClick}
       >
-        <Sticker url="/images/Bonjour.png" position={[0.42, 0, 0]} rotation={[Math.PI / 2, 0, 1.5]} scale={0.22} />
-        <Sticker url="/images/rsvp.png" position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 0]} scale={0.55} onClick={handleModalClick} />
+        {/* <Sticker url="/images/Bonjour.png" position={[0.42, 0, 0]} rotation={[Math.PI / 2, 0, 1.5]} scale={0.22} /> */}
+        {/* <Sticker url="/images/pxl-button.png" position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 0]} scale={0.55} onClick={handleModalClick} /> */}
       </mesh> 
     
       <group position={[0, 0.19, -0.255]}>

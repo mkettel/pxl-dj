@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
 
-const PlayerContext = createContext();
+const PlayerContext = createContext(); // creates a context object to hold the state
 
 export const PlayerProvider = ({ children }) => {
   const [isPlaying, setIsPlaying] = useState(false);

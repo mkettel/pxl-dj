@@ -30,7 +30,7 @@ font-family: 'Britney', cursive;
 }
 .main-container .title {
     margin: 0px;
-    font-size: 80px;
+    font-size: 50px;
     font-family: 'Britney', cursive;
     text-shadow: 0px 0px 10px rgb(244, 244, 244);
 }
@@ -42,6 +42,7 @@ font-family: 'Britney', cursive;
     color: white;
     font-family: 'Britney', cursive;
     pointer-events: none;
+    display: none;
 }
 .right-container .data {
     display: flex;
